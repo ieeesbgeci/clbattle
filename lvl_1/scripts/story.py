@@ -1,9 +1,10 @@
 import sys,time,os
 class storyTeller:
-    def __init__(self,count,delay=0.05):
+    def __init__(self,count,delay=0.05,fast=False):
         self.delay=delay
         self.count=count
         self.asset_dir=os.getenv('ASSET_DIR')
+        self.fast=fast
 
     def type_delay(self,text):
         for char in text:
@@ -24,7 +25,10 @@ class storyTeller:
         for i in range(start,end+1):
             os.system('clear')
             print(story[i]['ascii'])
-            self.type_delay(story[i]['plot'])
+            if not self.fast:
+                self.type_delay(story[i]['plot'])
+            else:
+                print(story[i]['plot'])
             print("\n Press Enter to continue ")
             input()
             os.system('clear')

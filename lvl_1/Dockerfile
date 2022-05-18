@@ -17,7 +17,7 @@ COPY ./.b-nilavara /home/lvl1/.b-nilavara
 
 RUN service ssh start
 
-RUN echo 'alias start="python3 /home/lvl1/.config/scripts/task.py" ' >> /home/lvl1/.bashrc
+RUN echo 'alias start="/home/lvl1/.config/scripts/task.py" ' >> /home/lvl1/.bashrc
 
 RUN echo 'export ASSET_DIR="/home/lvl1/.config/scripts/assets/"' >> /home/lvl1/.bashrc
 

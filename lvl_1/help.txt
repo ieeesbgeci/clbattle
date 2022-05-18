@@ -1,3 +1,4 @@
 ls , cat and cd commands may come in handy : ) .
 try searching for hidden folders using ls -a .
 enter [start] to view the task again : ) .
+enter [start fast] to skip text delay : ) .
