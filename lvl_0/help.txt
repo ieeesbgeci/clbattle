@@ -1,0 +1,2 @@
+ls , cat and cd commands may come in handy : ) .
+enter [start] to view the task again : ) .
