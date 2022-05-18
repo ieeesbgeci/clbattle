@@ -1,6 +1,6 @@
 import sys,time,os
 class storyTeller:
-    def __init__(self,count,delay=0.05,fast=False):
+    def __init__(self,count,delay=0.02,fast=False):
         self.delay=delay
         self.count=count
         self.asset_dir=os.getenv('ASSET_DIR')

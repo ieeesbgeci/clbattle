@@ -1,3 +1,5 @@
-ls , cat and cd commands may come in handy : ) .
+find command may come in handy : ) .
+try searching for the file name : )
+
 enter [start] to view the task again : ) .
 enter [start fast] to skip text delay : ) .
