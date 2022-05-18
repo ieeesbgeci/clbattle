@@ -1,4 +1,10 @@
 #!/bin/bash
+if [ -z "$1" ]
+  then
+    echo "Number of levels not specified"
+    exit 1
+fi
+
 count=$1
 for((c=0;c<=count;c++))
 do 
