@@ -3,7 +3,7 @@ FROM ubuntu:latest
 
 LABEL "author"="v4zha"
 
-RUN apt update && apt install  openssh-server sudo -y vi vim nano 
+RUN apt update && apt install  openssh-server sudo -y vim nano 
 
 RUN useradd -rm -d /home/lvl0 -s /bin/bash -g root lvl0 
 
