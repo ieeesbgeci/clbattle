@@ -2,15 +2,15 @@
 lvl 0 - intro                           cd/ls/cat
 lvl 1 - to castle                       cd/ls -a/cat
 lvl 2 - castle                          find
-lvl 3 - inside castle                   zip
-lvl 4 - castle events                   tar
+lvl 3 - inside castle                   sort,uniq
+lvl 4 - find dragon                     tar
 
 -------------------------chapter 2--------------------------
 
-lvl 5 - find dragon                     gzip
+lvl 5 - flee from dragon                grep
 lvl 6 - get help from lady              chmod +x
 lvl 7 - to gellotine tree               sort,tail
-lvl 8 - find muthalakotta bettalion     grep
+lvl 8 - find muthalakotta bettalion     ps,grep
 lvl 9 - in search of rockys hammer      pipe
 
 -------------------------chapter 3--------------------------

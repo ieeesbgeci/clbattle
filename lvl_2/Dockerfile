@@ -3,33 +3,35 @@ FROM ubuntu:latest
 
 LABEL "author"="v4zha"
 
+ARG LVL=lvl2
+
 RUN apt update && apt install  openssh-server sudo -y vim nano 
 
-RUN useradd -rm -d /home/lvl2 -s /bin/bash -g root lvl2
+RUN useradd -rm -d /home/$LVL -s /bin/bash -g root $LVL
 
-RUN  echo 'lvl2:kunj1_kuRuV1' | chpasswd
+RUN  echo "$LVL:kunj1_kuRuV1" | chpasswd
 
-COPY  ./scripts /home/lvl2/.config/scripts
+COPY  ./scripts /home/$LVL/.config/scripts
 
-COPY  ./help.txt /home/lvl2/
+COPY  ./help.txt /home/$LVL/
 
-COPY ./folder_gen.sh /home/lvl2/folder_gen.sh
+COPY ./folder_gen.sh /home/$LVL/folder_gen.sh
 
-RUN chmod +x /home/lvl2/folder_gen.sh
+RUN chmod +x /home/$LVL/folder_gen.sh
 
-RUN /home/lvl2/folder_gen.sh
+RUN /home/$LVL/folder_gen.sh
 
-RUN rm /home/lvl2/folder_gen.sh
+RUN rm /home/$LVL/folder_gen.sh
 
 RUN service ssh start
 
-RUN echo 'alias start="python3 /home/lvl2/.config/scripts/task.py" ' >> /home/lvl2/.bashrc
+RUN echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc
 
-RUN echo 'export ASSET_DIR="/home/lvl2/.config/scripts/assets/"' >> /home/lvl2/.bashrc
+RUN echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc
 
-RUN echo 'alias help="clear && cat /home/lvl2/help.txt"' >> /home/lvl2/.bashrc 
+RUN echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc 
 
-RUN echo 'clear && cat /home/lvl2/.config/scripts/assets/intro.txt' >> /home/lvl2/.bashrc 
+RUN echo "clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
 
 EXPOSE 22
 

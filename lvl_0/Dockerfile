@@ -3,27 +3,29 @@ FROM ubuntu:latest
 
 LABEL "author"="v4zha"
 
+ARG LVL=lvl0
+
 RUN apt update && apt install  openssh-server sudo -y vim nano 
 
-RUN useradd -rm -d /home/lvl0 -s /bin/bash -g root lvl0 
+RUN useradd -rm -d /home/$LVL -s /bin/bash -g root $LVL
 
-RUN  echo 'lvl0:clbattle' | chpasswd
+RUN  echo "$LVL:clbattle" | chpasswd
 
-COPY ./scrolls /home/lvl0/scrolls
+COPY ./scrolls /home/$LVL/scrolls
 
-COPY  ./scripts /home/lvl0/.scripts
+COPY  ./scripts /home/$LVL/.scripts
 
-COPY  ./help.txt /home/lvl0/
+COPY  ./help.txt /home/$LVL/
 
 RUN service ssh start
 
-RUN echo 'alias start="python3 /home/lvl0/.scripts/task.py" ' >> /home/lvl0/.bashrc
+RUN echo "alias start='python3 /home/$LVL/.scripts/task.py' " >> /home/$LVL/.bashrc
 
-RUN echo 'export ASSET_DIR="/home/lvl0/.scripts/assets/"' >> /home/lvl0/.bashrc
+RUN echo "export ASSET_DIR='/home/$LVL/.scripts/assets/'" >> /home/$LVL/.bashrc
 
-RUN echo 'alias help="clear && cat /home/lvl0/help.txt"' >> /home/lvl0/.bashrc 
+RUN echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc 
 
-RUN echo 'clear && cat /home/lvl0/.scripts/assets/intro.txt' >> /home/lvl0/.bashrc 
+RUN echo "clear && cat /home/$LVL/.scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
 
 EXPOSE 22
 
