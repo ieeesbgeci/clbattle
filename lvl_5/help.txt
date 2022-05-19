@@ -1,0 +1,6 @@
+grep commands may come in handy : ) .
+
+use grep command to match '{{' characters.
+
+enter [start] to view the task again : ) .
+enter [start fast] to skip text delay : ) .
