@@ -8,17 +8,17 @@ lvl 4 - find dragon                     tar
 -------------------------chapter 2--------------------------
 
 lvl 5 - out for the castle              grep
-lvl 6 - path to the tree                chmod +x
-lvl 7 - to gellotine tree               sort,tail
-lvl 8 - find muthalakotta bettalion     ps,grep
+lvl 6 - path to the tree                execute program
+lvl 7 - to gellotine tree               cp
+lvl 8 - find muthalakotta bettalion     su new_user
 lvl 9 - in search of rockys hammer      pipe
 
 -------------------------chapter 3--------------------------
 
-lvl 10 - finding rockys hammer          edit_file
-lvl 11 - rocky hammer event             wget
-lvl 12 - bridge puzzle                  get
-lvl 13 - back to castle                 md5_checksum
+lvl 10 - statue of v_devatha            edit_file
+lvl 11 - finding rockys hammer          md5_checksum
+lvl 12 - bridge puzzle                  wget
+lvl 13 - back to castle                 get
 lvl 14 - return to dragon               post
 lvl 15 - the End
 

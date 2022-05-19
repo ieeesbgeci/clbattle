@@ -1,0 +1,6 @@
+chmod,ls,cat,file commands may come in handy : ) .
+
+find the lock code and execute the lever binary to access the lever.
+
+enter [start] to view the task again : ) .
+enter [start fast] to skip text delay : ) .
