@@ -168,7 +168,7 @@ RUN service ssh start &&\
     echo "alias help='clear && cat /home/lvl6/help.txt'" >> /home/lvl6/.bashrc &&\
     echo "clear && cat /home/lvl6/.config/scripts/assets/intro.txt" >> /home/lvl6/.bashrc &&\
     gcc /home/lvl6/task.c -O3 -Wno-unused-result -o /home/lvl6/lever &&\
-    echo "chmod u-x /home/lvl6/lever" >> .bashrc &&\
+    echo "chmod u-x /home/lvl6/lever" >> /home/lvl6/.bashrc &&\
     rm /home/lvl6/task.c
 
 #====================================================================
