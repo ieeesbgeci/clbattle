@@ -1,4 +1,6 @@
 #!/bin/bash
+#build multiple images and containers
+
 if [ -z "$1" ]
   then
     echo "Number of levels not specified"
