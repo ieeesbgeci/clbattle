@@ -12,6 +12,8 @@ echo "$LVL:ambala_pr4vu" | chpasswd
 
 COPY  ./scripts /home/$LVL/.config/scripts
 
+COPY  ../story.py /home/$LVL/.config/scripts/story.py
+
 COPY  ./help.txt /home/$LVL/
 
 COPY ./task.sh /home/$LVL/task.sh

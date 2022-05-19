@@ -12,14 +12,15 @@ RUN useradd -rm -d /home/$LVL -s /bin/bash -g root $LVL &&\
 
 COPY  ./scripts /home/$LVL/.config/scripts
 
+COPY  ../story.py /home/$LVL/.config/scripts/story.py
+
 COPY  ./help.txt /home/$LVL/
 
 COPY ./.lock.txt /home/$LVL/.lock.txt
 
 COPY  ./task.c /home/$LVL/task.c
 
-RUN chmod +x /home/$LVL/task.sh &&\
-    service ssh start &&\
+RUN service ssh start &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\

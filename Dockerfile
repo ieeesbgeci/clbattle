@@ -17,7 +17,9 @@ RUN useradd -rm -d /home/lvl0 -s /bin/bash -g root lvl0 &&\
 
 COPY ./lvl_0/scrolls /home/lvl0/scrolls
 
-COPY  ./lvl_0/scripts /home/lvl0/.scripts
+COPY  ./lvl_0/scripts /home/lvl0/.config/scripts
+
+COPY  ./story.py /home/lvl0/.config/scripts/story.py
 
 COPY  ./lvl_0/help.txt /home/lvl0/
 
@@ -35,6 +37,8 @@ RUN useradd -rm -d /home/lvl1 -s /bin/bash -g root lvl1 &&\
     echo "lvl1:vapachis_legacy" | chpasswd
 
 COPY  ./lvl_1/scripts /home/lvl1/.config/scripts
+
+COPY  ./story.py /home/lvl1/.config/scripts/story.py
 
 COPY  ./lvl_1/help.txt /home/lvl1/
 
@@ -54,6 +58,8 @@ RUN useradd -rm -d /home/lvl2 -s /bin/bash -g root lvl2 &&\
     echo "lvl2:kunj1_kuRuV1" | chpasswd
 
 COPY  ./lvl_2/scripts /home/lvl2/.config/scripts
+
+COPY  ./story.py /home/lvl2/.config/scripts/story.py
 
 COPY  ./lvl_2/help.txt /home/lvl2/
 
@@ -77,6 +83,8 @@ RUN useradd -rm -d /home/lvl3 -s /bin/bash -g root lvl3 &&\
 
 COPY  ./lvl_3/scripts /home/lvl3/.config/scripts
 
+COPY  ./story.py /home/lvl3/.config/scripts/story.py
+
 COPY  ./lvl_3/help.txt /home/lvl3/
 
 COPY ./lvl_3/file_gen.py /home/lvl3/file_gen.py
@@ -98,6 +106,8 @@ echo "lvl4:ambala_pr4vu" | chpasswd
 
 COPY  ./lvl_4/scripts /home/lvl4/.config/scripts
 
+COPY  ./story.py /home/lvl4/.config/scripts/story.py
+
 COPY  ./lvl_4/help.txt /home/lvl4/
 
 COPY ./lvl_4/task.sh /home/lvl4/task.sh
@@ -111,7 +121,6 @@ echo "export ASSET_DIR='/home/lvl4/.config/scripts/assets/'" >> /home/lvl4/.bash
 echo "alias help='clear && cat /home/lvl4/help.txt'" >> /home/lvl4/.bashrc &&\
 echo "clear && cat /home/lvl4/.config/scripts/assets/intro.txt" >> /home/lvl4/.bashrc 
 
-
 #====================================================================
 
 # level 5
@@ -120,6 +129,8 @@ RUN useradd -rm -d /home/lvl5 -s /bin/bash -g root lvl5 &&\
     echo "lvl5:k4tTu_mynh4" | chpasswd
 
 COPY  ./lvl_5/scripts /home/lvl5/.config/scripts
+
+COPY  ./story.py /home/lvl5/.config/scripts/story.py
 
 COPY  ./lvl_5/help.txt /home/lvl5/
 
@@ -143,14 +154,15 @@ RUN useradd -rm -d /home/lvl6 -s /bin/bash -g root lvl6 &&\
 
 COPY  ./lvl_6/scripts /home/lvl6/.config/scripts
 
+COPY  ./story.py /home/lvl6/.config/scripts/story.py
+
 COPY  ./lvl_6/help.txt /home/lvl6/
 
 COPY ./lvl_6/.lock.txt /home/lvl6/.lock.txt
 
 COPY  ./lvl_6/task.c /home/lvl6/task.c
 
-RUN chmod +x /home/lvl6/task.sh &&\
-    service ssh start &&\
+RUN service ssh start &&\
     echo "alias start='python3 /home/lvl6/.config/scripts/task.py' " >> /home/lvl6/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl6/.config/scripts/assets/'" >> /home/lvl6/.bashrc &&\
     echo "alias help='clear && cat /home/lvl6/help.txt'" >> /home/lvl6/.bashrc &&\

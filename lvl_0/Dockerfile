@@ -12,7 +12,9 @@ RUN useradd -rm -d /home/$LVL -s /bin/bash -g root $LVL &&\
 
 COPY ./scrolls /home/$LVL/scrolls
 
-COPY  ./scripts /home/$LVL/.scripts
+COPY  ./scripts /home/$LVL/.config/scripts
+
+COPY  ../story.py /home/$LVL/.config/scripts/story.py
 
 COPY  ./help.txt /home/$LVL/
 
