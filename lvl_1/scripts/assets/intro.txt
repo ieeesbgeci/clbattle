@@ -9,6 +9,7 @@
 =========================================================
 
 Welcome to Level 1 of CL Battle.
+
 enter [start] to resume your adventure .
 enter [start fast] to ignore type delay.
 

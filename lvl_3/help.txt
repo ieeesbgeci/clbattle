@@ -1,4 +1,6 @@
-sort,grep commands may come in handy : ) .
+sort,tail,grep commands may come in handy : ) .
+
+sort the file and find the key in 3rd last entry.
 
 enter [start] to view the task again : ) .
 enter [start fast] to skip text delay : ) .

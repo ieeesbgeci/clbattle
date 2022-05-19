@@ -15,13 +15,13 @@ COPY  ./scripts /home/$LVL/.config/scripts
 
 COPY  ./help.txt /home/$LVL/
 
-COPY ./folder_gen.sh /home/$LVL/folder_gen.sh
+COPY ./task.sh /home/$LVL/task.sh
 
-RUN chmod +x /home/$LVL/folder_gen.sh
+RUN chmod +x /home/$LVL/task.sh
 
-RUN /home/$LVL/folder_gen.sh
+RUN /home/$LVL/task.sh
 
-RUN rm /home/$LVL/folder_gen.sh
+RUN rm /home/$LVL/task.sh
 
 RUN service ssh start
 

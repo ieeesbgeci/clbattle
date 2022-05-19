@@ -8,9 +8,9 @@
                                                          
 =========================================================
 
-Welcome to Level 0 of CL Battle.
+Welcome to Level 4 of CL Battle.
 
-enter [start] to begin your adventure .
+enter [start] to resume your adventure .
 enter [start fast] to ignore type delay.
 
 [NOTE] : enter [help] for help : )  

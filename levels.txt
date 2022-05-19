@@ -7,8 +7,8 @@ lvl 4 - find dragon                     tar
 
 -------------------------chapter 2--------------------------
 
-lvl 5 - flee from dragon                grep
-lvl 6 - get help from lady              chmod +x
+lvl 5 - out for the castle              grep
+lvl 6 - path to the tree                chmod +x
 lvl 7 - to gellotine tree               sort,tail
 lvl 8 - find muthalakotta bettalion     ps,grep
 lvl 9 - in search of rockys hammer      pipe

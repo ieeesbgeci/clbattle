@@ -1,0 +1,6 @@
+tar commands may come in handy : ) .
+
+extract the archive and find the key : ) .
+
+enter [start] to view the task again : ) .
+enter [start fast] to skip text delay : ) .
