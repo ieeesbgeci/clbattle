@@ -1,14 +1,14 @@
 -------------------------chapter 1--------------------------
-lvl 0 - intro                           cd/ls/cat
-lvl 1 - to castle                       cd/ls -a/cat
-lvl 2 - castle                          find
-lvl 3 - inside castle                   sort,uniq
-lvl 4 - find dragon                     tar
+lvl 0 - intro                           cd/ls/cat           clbattle
+lvl 1 - to castle                       cd/ls -a/cat        vapachis_legacy
+lvl 2 - castle                          find                kunj1_kuRuV1
+lvl 3 - inside castle                   sort,uniq           k4rukaVay4l_kuruv1
+lvl 4 - find dragon                     tar                 ambala_pr4vu
 
 -------------------------chapter 2--------------------------
 
-lvl 5 - out for the castle              grep
-lvl 6 - path to the tree                execute program
+lvl 5 - out for the castle              grep                k4tTu_mynh4
+lvl 6 - path to the tree                execute program     v3gam_0od1Kk0
 lvl 7 - to gellotine tree               cp
 lvl 8 - find muthalakotta bettalion     su new_user
 lvl 9 - in search of rockys hammer      pipe
