@@ -26,7 +26,8 @@ RUN service ssh start &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\
     echo "clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc &&\
     gcc /home/$LVL/task.c -O3 -Wno-unused-result -o /home/$LVL/lever &&\
-    echo "chmod u-x /home/$LVL/lever" >> /home/$LVL/.bashrc &&\
+    chown lvl6 /home/$LVL/lever &&\
+    echo "chmod 444 /home/$LVL/lever" >> /home/$LVL/.bashrc &&\
     rm /home/$LVL/task.c
 
 EXPOSE 22
