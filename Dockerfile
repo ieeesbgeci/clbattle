@@ -24,10 +24,10 @@ COPY  ./story.py /home/lvl0/.config/scripts/story.py
 COPY  ./lvl_0/help.txt /home/lvl0/
 
 RUN service ssh start &&\
-    echo "alias start='python3 /home/lvl0/.scripts/task.py' " >> /home/lvl0/.bashrc &&\
-    echo "export ASSET_DIR='/home/lvl0/.scripts/assets/'" >> /home/lvl0/.bashrc &&\
+    echo "alias start='python3 /home/lvl0/.config/scripts/task.py' " >> /home/lvl0/.bashrc &&\
+    echo "export ASSET_DIR='/home/lvl0/.config/scripts/assets/'" >> /home/lvl0/.bashrc &&\
     echo "alias help='clear && cat /home/lvl0/help.txt'" >> /home/lvl0/.bashrc &&\
-    echo "clear && cat /home/lvl0/.scripts/assets/intro.txt" >> /home/lvl0/.bashrc 
+    echo "clear && cat /home/lvl0/.config/scripts/assets/intro.txt" >> /home/lvl0/.bashrc 
 
 #====================================================================
 
