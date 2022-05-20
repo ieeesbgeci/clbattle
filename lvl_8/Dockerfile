@@ -12,10 +12,7 @@ RUN useradd -rm -d /home/$LVL -s /bin/bash -g root $LVL &&\
 
 COPY  ./scripts /home/$LVL/.config/scripts
 
-COPY  ../story.py /home/$LVL/.config/scripts/story.py
-
 COPY  ./help.txt /home/$LVL/
-
 
 RUN useradd -rm -d /home/gopan -s /bin/bash -g root gopan &&\
     echo "gopan:agentX" | chpasswd &&\

@@ -154,8 +154,6 @@ RUN useradd -rm -d /home/lvl6 -s /bin/bash -g root lvl6 &&\
 
 COPY  ./lvl_6/scripts /home/lvl6/.config/scripts
 
-COPY  ./story.py /home/lvl6/.config/scripts/story.py
-
 COPY  ./lvl_6/help.txt /home/lvl6/
 
 COPY ./lvl_6/.lock.txt /home/lvl6/.lock.txt
