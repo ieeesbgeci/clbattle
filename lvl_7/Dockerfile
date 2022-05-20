@@ -12,16 +12,17 @@ RUN useradd -rm -d /home/$LVL -s /bin/bash -g root $LVL &&\
 
 COPY  ./scripts /home/$LVL/.config/scripts
 
-COPY  ../story.py /home/$LVL/.config/scripts/story.py
-
 COPY  ./help.txt /home/$LVL/
 
-COPY ./task.sh /home/$LVL/task.sh
+COPY ./fountain /usr/local/bin/fountain
 
-RUN chmod +x /home/$LVL/task.sh &&\
-    /home/$LVL/task.sh &&\
-    rm /home/$LVL/task.sh &&\
-    service ssh start &&\
+COPY ./vellam.md5  /usr/local/fountain/vellam.md5
+
+COPY ./vellam /home/lvl7/storage/vellam
+
+
+RUN service ssh start &&\
+    mkdidr /home/lvl7/fountain &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\

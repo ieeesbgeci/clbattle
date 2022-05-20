@@ -14,8 +14,6 @@ COPY ./scrolls /home/$LVL/scrolls
 
 COPY  ./scripts /home/$LVL/.config/scripts
 
-COPY  ../story.py /home/$LVL/.config/scripts/story.py
-
 COPY  ./help.txt /home/$LVL/
 
 RUN service ssh start &&\
