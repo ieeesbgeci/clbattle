@@ -6,7 +6,7 @@ LABEL "author"="v4zha"
 
 #update and install necesary packages : )
 
-RUN apt update && apt install  openssh-server sudo  vim nano gcc shc -y
+RUN apt update && apt install  openssh-server sudo  vim nano gcc shc zip -y
 
 #====================================================================
 
@@ -226,6 +226,35 @@ RUN useradd -rm -d /home/gopan -s /bin/bash -g root gopan &&\
     echo "export ASSET_DIR='/home/lvl8/.config/scripts/assets/'" >> /home/lvl8/.bashrc &&\
     echo "alias help='clear && cat /home/lvl8/help.txt'" >> /home/lvl8/.bashrc &&\
     echo "clear && cat /home/lvl8/.config/scripts/assets/intro.txt" >> /home/lvl8/.bashrc 
+
+#====================================================================
+
+# level 9
+
+RUN useradd -rm -d /home/lvl9 -s /bin/bash -g root lvl9 &&\
+    echo "lvl9:ull1_v4da" | chpasswd
+
+COPY  ./lvl9/scripts /home/lvl9/.config/scripts
+
+COPY  ./story.py /home/lvl9/.config/scripts/story.py
+
+COPY  ./lvl9/help.txt /home/lvl9/
+
+COPY ./lvl9/task.c /home/lvl9/task.c
+
+RUN gcc /home/lvl9/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&\
+    rm /home/lvl9/task.c &&\
+    chmod  751 /usr/local/bin/mull_chedi &&\
+    mkdir /home/lvl9/treasure &&\
+    echo -e "================\nk4ttan_Ch4ya\n================\n" > /home/lvl9/treasure/secret &&\
+    cd /home/lvl9/ && zip -r --password thur4nNu_v4a treasure.zip treasure &&\
+    rm -rf /home/lvl9/treasure &&\
+    service ssh start &&\
+    echo "alias start='python3 /home/lvl9/.config/scripts/task.py' " >> /home/lvl9/.bashrc &&\
+    echo "export ASSET_DIR='/home/lvl9/.config/scripts/assets/'" >> /home/lvl9/.bashrc &&\
+    echo "alias help='clear && cat /home/lvl9/help.txt'" >> /home/lvl9/.bashrc &&\
+    echo "mull_chedi &">>/home/lvl9/.bashrc &&\
+    echo "touch treasure && rm -rf /home/lvl9/treasure && clear && cat /home/lvl9/.config/scripts/assets/intro.txt" >> /home/lvl9/.bashrc 
 
 #====================================================================
 
