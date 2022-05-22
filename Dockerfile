@@ -106,7 +106,7 @@ RUN python3 /home/lvl3/file_gen.py &&\
     rm /home/lvl3/file_gen.py &&\
     chmod -R 555 /home/lvl3/.config/scripts &&\
     chmod -R 555 /home/lvl3/help.txt &&\
-    chmod 555 /home/lvl3/spell-book.txt &&\
+    chmod 555 /home/lvl3/spell_book.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/lvl3/.config/scripts/task.py' " >> /home/lvl3/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl3/.config/scripts/assets/'" >> /home/lvl3/.bashrc &&\
@@ -159,7 +159,7 @@ RUN chmod +x /home/lvl5/task.sh &&\
     rm /home/lvl5/task.sh &&\
     chmod -R 555 /home/lvl5/.config/scripts &&\
     chmod -R 555 /home/lvl5/help.txt &&\
-    chmor -R 555 /home/lvl5/escape.txt &&\
+    chmod -R 555 /home/lvl5/escape.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/lvl5/.config/scripts/task.py' " >> /home/lvl5/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl5/.config/scripts/assets/'" >> /home/lvl5/.bashrc &&\
@@ -186,7 +186,7 @@ COPY  ./lvl6/task.c /home/lvl6/task.c
 RUN service ssh start &&\
     chmod -R 555 /home/lvl6/.config/scripts &&\
     chmod -R 555 /home/lvl6/help.txt &&\
-    chmor -R 555 /home/lvl6/.lock.txt &&\
+    chmod -R 555 /home/lvl6/.lock.txt &&\
     echo "alias start='python3 /home/lvl6/.config/scripts/task.py' " >> /home/lvl6/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl6/.config/scripts/assets/'" >> /home/lvl6/.bashrc &&\
     echo "alias help='clear && cat /home/lvl6/help.txt'" >> /home/lvl6/.bashrc &&\
@@ -369,7 +369,7 @@ RUN useradd -rm -d /home/lvl12 -s /bin/bash -g root lvl12 &&\
 
 COPY  ./lvl12/scripts /home/lvl12/.config/scripts
 
-COPY  ./lvl12/story.py /home/lvl12/.config/scripts/story.py
+COPY  ./story.py /home/lvl12/.config/scripts/story.py
 
 COPY  ./lvl12/help.txt /home/lvl12/
 
@@ -448,9 +448,11 @@ COPY  ./story.py /home/lvl15/.config/scripts/story.py
 
 COPY  ./lvl15/help.txt /home/lvl15/
 
+COPY  ./lvl15/instruction.txt /home/lvl15/
 
 RUN chmod -R 555 /home/lvl15/.config/scripts &&\
     chmod -R 555 /home/lvl15/help.txt &&\
+    chmod -R 555 /home/lvl15/instruction.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/lvl15/.config/scripts/task.py' " >> /home/lvl15/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl15/.config/scripts/assets/'" >> /home/lvl15/.bashrc &&\

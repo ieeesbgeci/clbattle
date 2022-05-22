@@ -20,7 +20,7 @@ RUN python3 /home/$LVL/file_gen.py &&\
     rm /home/$LVL/file_gen.py &&\
     chmod -R 555 /home/$LVL/.config/scripts &&\
     chmod -R 555 /home/$LVL/help.txt &&\
-    chmod 555 /home/$LVL/spell-book.txt &&\
+    chmod 555 /home/$LVL/spell_book.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
