@@ -1,6 +1,6 @@
-openssl commands may come in handy : ) .
+grep commands may come in handy : ) .
 
-try using  rsautl decrypt tool of openssl 
+use grep command to match '{{' characters.
 
 enter [start] to view the task again : ) .
 enter [start fast] to skip text delay : ) .

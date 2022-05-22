@@ -1,0 +1,5 @@
+Rocky bhai yude nirdesham anusarich nangal vanarane kaanan chennu.
+vanaranodu karyam paranju, angane njangal weapon room il ethi.
+Aa box inte lock thurann ningal athinullile sadanam eduthu kollu.
+
+Use openssl and try decrypting the file . 

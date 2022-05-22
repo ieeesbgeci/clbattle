@@ -364,7 +364,31 @@ RUN chmod -R 555 /home/lvl11/.config/scripts &&\
 
 # level 12
 
+RUN useradd -rm -d /home/lvl12 -s /bin/bash -g root lvl12 &&\
+    echo "lvl12:m0j1to" | chpasswd
 
+COPY  ./scripts /home/lvl12/.config/scripts
+
+COPY  ./story.py /home/lvl12/.config/scripts/story.py
+
+COPY  ./help.txt /home/lvl12/
+
+COPY ./task.sh /home/lvl12/task.sh
+
+RUN chmod +x /home/lvl12/task.sh &&\
+    /home/lvl12/task.sh &&\
+    rm /home/lvl12/task.sh &&\
+    chmod -R 555 /home/lvl12/.config/scripts &&\
+    chmod -R 555 /home/lvl12/help.txt &&\
+    service ssh start &&\
+    echo "alias start='python3 /home/lvl12/.config/scripts/task.py' " >> /home/lvl12/.bashrc &&\
+    echo "export ASSET_DIR='/home/lvl12/.config/scripts/assets/'" >> /home/lvl12/.bashrc &&\
+    echo "alias help='clear && cat /home/lvl12/help.txt'" >> /home/lvl12/.bashrc &&\
+    echo "clear && cat /home/lvl12/.config/scripts/assets/intro.txt" >> /home/lvl12/.bashrc 
+
+#====================================================================
+
+# level 13
 
 
 #Start ssh daemon
