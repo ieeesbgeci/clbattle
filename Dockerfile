@@ -448,11 +448,9 @@ COPY  ./story.py /home/lvl15/.config/scripts/story.py
 
 COPY  ./lvl15/help.txt /home/lvl15/
 
-COPY ./lvl15/instruction.txt /home/lvl15/instruction.txt
 
 RUN chmod -R 555 /home/lvl15/.config/scripts &&\
     chmod -R 555 /home/lvl15/help.txt &&\
-    chmod -R 555 /home/lvl15/instruction.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/lvl15/.config/scripts/task.py' " >> /home/lvl15/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl15/.config/scripts/assets/'" >> /home/lvl15/.bashrc &&\

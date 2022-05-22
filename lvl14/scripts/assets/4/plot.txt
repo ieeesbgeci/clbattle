@@ -1,0 +1,5 @@
+Athinullil oru bomb undayirunnu.
+Map : Ee bomb upayogichu nammukk ullelek kadakkam,Adhinayi ith adyam activate cheyyanam.
+A Pettiyile instuction vayich correct aayi request ayachal bomb work aakum : ) .
+
+Try reading instruction.txt and sending post request using curl.
