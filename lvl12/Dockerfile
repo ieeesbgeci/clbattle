@@ -3,12 +3,12 @@ FROM ubuntu:latest
 
 LABEL "author"="v4zha"
 
-ARG LVL=lvl5
+ARG LVL=lvl12
 
 RUN apt update && apt install  openssh-server sudo vim nano -y
 
 RUN useradd -rm -d /home/$LVL -s /bin/bash -g root $LVL &&\
-    echo "$LVL:k4tTu_mynh4" | chpasswd
+    echo "$LVL:m0j1to" | chpasswd
 
 COPY  ./scripts /home/$LVL/.config/scripts
 
@@ -21,7 +21,6 @@ RUN chmod +x /home/$LVL/task.sh &&\
     rm /home/$LVL/task.sh &&\
     chmod -R 555 /home/$LVL/.config/scripts &&\
     chmod -R 555 /home/$LVL/help.txt &&\
-    chmor -R 555 /home/$LVL/escape.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
