@@ -28,8 +28,8 @@ RUN service ssh start &&\
     rm /usr/local/bin/fountain.* &&\
     chmod  751 /usr/local/bin/fountain &&\
     chmod  440 /usr/local/fountain/vellam.md5 &&\
-    chmod 777 -R /home/lvl7/storage &&\
-    chmod 777 -R /home/lvl7/fountain &&\
+    chmod 555 -R /home/lvl7/storage &&\
+    chmod 555 -R /home/lvl7/fountain &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\
