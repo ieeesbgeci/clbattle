@@ -19,6 +19,9 @@ COPY ./.lock.txt /home/$LVL/.lock.txt
 COPY  ./task.c /home/$LVL/task.c
 
 RUN service ssh start &&\
+chmod -R 555 /home/$LVL/.config/scripts &&\
+    chmod -R 555 /home/$LVL/help.txt &&\
+    chmor -R 555 /home/$LVL/.lock.txt &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\

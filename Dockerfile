@@ -6,7 +6,7 @@ LABEL "author"="v4zha"
 
 #update and install necesary packages : )
 
-RUN apt update && apt install  openssh-server sudo  vim nano gcc shc zip -y
+RUN apt update && apt install  openssh-server sudo  vim nano gcc shc zip vsftpd ftp -y
 
 #====================================================================
 

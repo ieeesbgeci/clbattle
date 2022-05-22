@@ -19,6 +19,9 @@ COPY ./task.sh /home/$LVL/task.sh
 RUN chmod +x /home/$LVL/task.sh &&\
     /home/$LVL/task.sh &&\
     rm /home/$LVL/task.sh &&\
+    chmod -R 555 /home/$LVL/.config/scripts &&\
+    chmod -R 555 /home/$LVL/help.txt &&\
+    chmor -R 555 /home/$LVL/escape.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\

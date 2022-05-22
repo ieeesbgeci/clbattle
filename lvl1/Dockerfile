@@ -17,6 +17,9 @@ COPY  ./help.txt /home/$LVL/
 COPY ./.b-nilavara /home/$LVL/.b-nilavara
 
 RUN service ssh start &&\
+    chmod -R 555 /home/$LVL/.config/scripts &&\
+    chmod -R 555 /home/$LVL/help.txt &&\
+    chmod -R 555 /home/$LVL/.b-nilavara &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc  &&\

@@ -23,6 +23,8 @@ RUN gcc /home/$LVL/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&
     echo -e "================\nk4ttan_Ch4ya\n================\n" > /home/$LVL/treasure/secret &&\
     cd /home/$LVL/ && zip -r --password thur4nNu_v4a treasure.zip treasure &&\
     rm -rf /home/$LVL/treasure &&\
+    chmod -R 555 /home/$LVL/.config/scripts &&\
+    chmod -R 555 /home/$LVL/help.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\

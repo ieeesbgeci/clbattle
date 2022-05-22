@@ -21,6 +21,8 @@ COPY ./vellam.md5  /usr/local/fountain/vellam.md5
 COPY ./vellam /home/lvl7/storage/vellam
 
 RUN service ssh start &&\
+chmod -R 555 /home/$LVL/.config/scripts &&\
+    chmod -R 555 /home/$LVL/help.txt &&\
     mkdir /home/lvl7/fountain &&\
     shc -f /usr/local/bin/fountain.sh -U -o /usr/local/bin/fountain &&\
     rm /usr/local/bin/fountain.* &&\

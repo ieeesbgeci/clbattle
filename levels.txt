@@ -11,11 +11,11 @@ lvl 5 - out for the castle              grep                k4tTu_mynh4
 lvl 6 - path to the tree                execute program     v3gam_0od1Kk0
 lvl 7 - to gellotine tree               cp & secret_task    p4rippu_v4da
 lvl 8 - find muthalakotta battalion     su new_user         p4rzm_p0r1
-lvl 9 - satatue of v_devatha            ps                  ull1_v4dA
+lvl 9 - satatue of v_devatha            jobs                ull1_v4dA
 
 -------------------------chapter 3--------------------------
 
-lvl 10 - in search of rocky bhai        edit_file           k4ttan_Ch4ya
+lvl 10 - in search of rocky bhai        ftp                 k4ttan_Ch4ya
 lvl 11 - find rockys bun                md5_checksum        AppY_f1zZ
 lvl 12 - return from kgf                wget                m0j1t0
 lvl 13 - back to castle                 get                 s4mbhaR4m
