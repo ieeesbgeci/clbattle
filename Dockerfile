@@ -8,6 +8,10 @@ LABEL "author"="v4zha"
 
 RUN apt update && apt install  openssh-server sudo  vim nano gcc shc zip vsftpd ftp -y
 
+COPY ./start.sh /start.sh
+
+RUN chmod +x /start.sh
+
 #====================================================================
 
 # level 0
@@ -24,6 +28,9 @@ COPY  ./story.py /home/lvl0/.config/scripts/story.py
 COPY  ./lvl0/help.txt /home/lvl0/
 
 RUN service ssh start &&\
+    chmod -R 555 /home/lvl0/.config/scripts &&\
+    chmod -R 555 /home/lvl0/help.txt &&\
+    chmod -R 555 /home/lvl0/scrolls  &&\
     echo "alias start='python3 /home/lvl0/.config/scripts/task.py' " >> /home/lvl0/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl0/.config/scripts/assets/'" >> /home/lvl0/.bashrc &&\
     echo "alias help='clear && cat /home/lvl0/help.txt'" >> /home/lvl0/.bashrc &&\
@@ -45,6 +52,9 @@ COPY  ./lvl1/help.txt /home/lvl1/
 COPY ./lvl1/.b-nilavara /home/lvl1/.b-nilavara
 
 RUN service ssh start &&\
+    chmod -R 555 /home/lvl1/.config/scripts &&\
+    chmod -R 555 /home/lvl1/help.txt &&\
+    chmod -R 555 /home/lvl1/.b-nilavara &&\
     echo "alias start='python3 /home/lvl1/.config/scripts/task.py' " >> /home/lvl1/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl1/.config/scripts/assets/'" >> /home/lvl1/.bashrc &&\
     echo "alias help='clear && cat /home/lvl1/help.txt'" >> /home/lvl1/.bashrc  &&\
@@ -68,6 +78,9 @@ COPY ./lvl2/task.sh /home/lvl2/task.sh
 RUN chmod +x /home/lvl2/task.sh &&\
     /home/lvl2/task.sh  &&\
     rm /home/lvl2/task.sh &&\
+    chmod -R 555 /home/lvl2/.config/scripts &&\
+    chmod -R 555 /home/lvl2/help.txt &&\
+    chmod -R 555 /home/lvl2/doors &&\
     service ssh start &&\
     echo "alias start='python3 /home/lvl2/.config/scripts/task.py' " >> /home/lvl2/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl2/.config/scripts/assets/'" >> /home/lvl2/.bashrc &&\
@@ -90,12 +103,15 @@ COPY  ./lvl3/help.txt /home/lvl3/
 COPY ./lvl3/file_gen.py /home/lvl3/file_gen.py
 
 RUN python3 /home/lvl3/file_gen.py &&\
-rm /home/lvl3/file_gen.py &&\
-service ssh start &&\
-echo "alias start='python3 /home/lvl3/.config/scripts/task.py' " >> /home/lvl3/.bashrc &&\
-echo "export ASSET_DIR='/home/lvl3/.config/scripts/assets/'" >> /home/lvl3/.bashrc &&\
-echo "alias help='clear && cat /home/lvl3/help.txt'" >> /home/lvl3/.bashrc &&\
-echo "clear && cat /home/lvl3/.config/scripts/assets/intro.txt" >> /home/lvl3/.bashrc 
+    rm /home/lvl3/file_gen.py &&\
+    chmod -R 555 /home/lvl3/.config/scripts &&\
+    chmod -R 555 /home/lvl3/help.txt &&\
+    chmod 555 /home/lvl3/spell-book.txt &&\
+    service ssh start &&\
+    echo "alias start='python3 /home/lvl3/.config/scripts/task.py' " >> /home/lvl3/.bashrc &&\
+    echo "export ASSET_DIR='/home/lvl3/.config/scripts/assets/'" >> /home/lvl3/.bashrc &&\
+    echo "alias help='clear && cat /home/lvl3/help.txt'" >> /home/lvl3/.bashrc &&\
+    echo "clear && cat /home/lvl3/.config/scripts/assets/intro.txt" >> /home/lvl3/.bashrc 
 
 #====================================================================
 
@@ -113,13 +129,15 @@ COPY  ./lvl4/help.txt /home/lvl4/
 COPY ./lvl4/task.sh /home/lvl4/task.sh
 
 RUN chmod +x /home/lvl4/task.sh &&\
-/home/lvl4/task.sh &&\
-rm /home/lvl4/task.sh &&\
-service ssh start &&\
-echo "alias start='python3 /home/lvl4/.config/scripts/task.py' " >> /home/lvl4/.bashrc &&\
-echo "export ASSET_DIR='/home/lvl4/.config/scripts/assets/'" >> /home/lvl4/.bashrc &&\
-echo "alias help='clear && cat /home/lvl4/help.txt'" >> /home/lvl4/.bashrc &&\
-echo "clear && cat /home/lvl4/.config/scripts/assets/intro.txt" >> /home/lvl4/.bashrc 
+    /home/lvl4/task.sh &&\
+    rm /home/lvl4/task.sh &&\
+    chmod -R 555 /home/lvl4/.config/scripts &&\
+    chmod -R 555 /home/lvl4/help.txt &&\
+    service ssh start &&\
+    echo "alias start='python3 /home/lvl4/.config/scripts/task.py' " >> /home/lvl4/.bashrc &&\
+    echo "export ASSET_DIR='/home/lvl4/.config/scripts/assets/'" >> /home/lvl4/.bashrc &&\
+    echo "alias help='clear && cat /home/lvl4/help.txt'" >> /home/lvl4/.bashrc &&\
+    echo "clear && cat /home/lvl4/.config/scripts/assets/intro.txt" >> /home/lvl4/.bashrc 
 
 #====================================================================
 
@@ -139,6 +157,9 @@ COPY ./lvl5/task.sh /home/lvl5/task.sh
 RUN chmod +x /home/lvl5/task.sh &&\
     /home/lvl5/task.sh &&\
     rm /home/lvl5/task.sh &&\
+    chmod -R 555 /home/lvl5/.config/scripts &&\
+    chmod -R 555 /home/lvl5/help.txt &&\
+    chmor -R 555 /home/lvl5/escape.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/lvl5/.config/scripts/task.py' " >> /home/lvl5/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl5/.config/scripts/assets/'" >> /home/lvl5/.bashrc &&\
@@ -163,6 +184,9 @@ COPY ./lvl6/.lock.txt /home/lvl6/.lock.txt
 COPY  ./lvl6/task.c /home/lvl6/task.c
 
 RUN service ssh start &&\
+    chmod -R 555 /home/lvl6/.config/scripts &&\
+    chmod -R 555 /home/lvl6/help.txt &&\
+    chmor -R 555 /home/lvl6/.lock.txt &&\
     echo "alias start='python3 /home/lvl6/.config/scripts/task.py' " >> /home/lvl6/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl6/.config/scripts/assets/'" >> /home/lvl6/.bashrc &&\
     echo "alias help='clear && cat /home/lvl6/help.txt'" >> /home/lvl6/.bashrc &&\
@@ -192,6 +216,8 @@ COPY ./lvl7/vellam.md5  /usr/local/fountain/vellam.md5
 COPY ./lvl7/vellam /home/lvl7/storage/vellam
 
 RUN service ssh start &&\
+    chmod -R 555 /home/lvl7/.config/scripts &&\
+    chmod -R 555 /home/lvl7/help.txt &&\
     mkdir /home/lvl7/fountain &&\
     shc -f /usr/local/bin/fountain.sh -U -o /usr/local/bin/fountain &&\
     rm /usr/local/bin/fountain.* &&\
@@ -221,6 +247,10 @@ RUN useradd -rm -d /home/gopan -s /bin/bash -g root gopan &&\
     echo "gopan:agentX" | chpasswd &&\
     echo -e "============\null1_v4da\n============\n" > /home/gopan/rahasyam &&\
     echo -e "thaka thaka..thalayude_vilayattu..\n [agentX]\n" > /home/lvl8/.thaka_thaka.txt &&\
+    chmod -R 555 /home/lvl8/.config/scripts &&\
+    chmod -R 555 /home/lvl8/help.txt &&\
+    chmod -R 555 /home/gopan/rahasyam &&\
+    chmod -R 555 /home/lvl8/.thaka_thaka.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/lvl8/.config/scripts/task.py' " >> /home/lvl8/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl8/.config/scripts/assets/'" >> /home/lvl8/.bashrc &&\
@@ -249,6 +279,8 @@ RUN gcc /home/lvl9/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&
     echo -e "================\nk4ttan_Ch4ya\n================\n" > /home/lvl9/treasure/secret &&\
     cd /home/lvl9/ && zip -r --password thur4nNu_v4a treasure.zip treasure &&\
     rm -rf /home/lvl9/treasure &&\
+    chmod -R 555 /home/lvl9/.config/scripts &&\
+    chmod -R 555 /home/lvl9/help.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/lvl9/.config/scripts/task.py' " >> /home/lvl9/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl9/.config/scripts/assets/'" >> /home/lvl9/.bashrc &&\
@@ -258,10 +290,46 @@ RUN gcc /home/lvl9/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&
 
 #====================================================================
 
+# level 10
+
+RUN useradd -rm -d /home/lvl10 -s /bin/bash -g root lvl10 &&\
+    echo "lvl10:k4ttan_Ch4ya" | chpasswd 
+
+COPY  ./lvl10/scripts /home/lvl10/.config/scripts
+
+COPY  ./story.py /home/lvl10/.config/scripts/story.py
+
+COPY  ./lvl10/help.txt /home/lvl10/
+
+COPY ./lvl10/vanaram_ftp.txt /home/lvl10/vanaram_ftp.txt
+
+COPY ./lvl10/vsftpd.conf /etc/vsftpd.conf
+
+COPY ./lvl10/vsftpd.u_list /etc/vsftpd.u_list
+
+COPY ./lvl10/start.sh     /start.sh
+
+RUN useradd -rm -d /home/vanaram -s /bin/bash -g root vanaram &&\
+    echo "vanaram:par4nju_ther1la" | chpasswd &&\
+    chmod +x start.sh &&\
+    mkdir /ftp &&\
+    echo "AppY_f1zZ" > /ftp/rahasyam &&\
+    chmod -R 555 /home/lvl10/.config/scripts &&\
+    chmod -R 555 /home/lvl10/help.txt &&\
+    chmod -R 555 /home/lvl10/vanaram_ftp.txt &&\
+    service ssh start &&\
+    service vsftpd start &&\
+    echo "alias start='python3 /home/lvl10/.config/scripts/task.py' " >> /home/lvl10/.bashrc &&\
+    echo "export ASSET_DIR='/home/lvl10/.config/scripts/assets/'" >> /home/lvl10/.bashrc &&\
+    echo "alias help='clear && cat /home/lvl10/help.txt'" >> /home/lvl10/.bashrc &&\
+    echo "touch /home/lvl10/rahasyam && rm /home/lvl10/rahasyam && clear && cat /home/lvl10/.config/scripts/assets/intro.txt" >> /home/lvl10/.bashrc 
+
+#====================================================================
+
 #Start ssh daemon
 
 EXPOSE 22
 
-CMD ["/usr/sbin/sshd","-D"]
+CMD ["/start.sh"]
 
 #====================================================================

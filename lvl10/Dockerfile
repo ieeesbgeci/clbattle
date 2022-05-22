@@ -8,8 +8,7 @@ ARG LVL=lvl10
 RUN apt update && apt install  openssh-server sudo vim nano vsftpd ftp -y
 
 RUN useradd -rm -d /home/$LVL -s /bin/bash -g root $LVL &&\
-    echo "$LVL:k4ttan_Ch4ya" | chpasswd &&\
-    echo "root:yoyo-payya" | chpasswd 
+    echo "$LVL:k4ttan_Ch4ya" | chpasswd 
 
 COPY  ./scripts /home/$LVL/.config/scripts
 
@@ -39,8 +38,6 @@ RUN useradd -rm -d /home/vanaram -s /bin/bash -g root vanaram &&\
     echo "touch /home/$LVL/rahasyam && rm /home/$LVL/rahasyam && clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
 
 EXPOSE 22
-
-# CMD ["/usr/sbin/sshd","-D"]
 
 CMD ["/start.sh"]
 
