@@ -326,6 +326,45 @@ RUN useradd -rm -d /home/vanaram -s /bin/bash -g root vanaram &&\
 
 #====================================================================
 
+# level 11
+
+RUN useradd -rm -d /home/lvl11 -s /bin/bash -g root lvl11 &&\
+    echo "lvl11:AppY_f1zZ" | chpasswd
+
+COPY  ./lvl11/scripts /home/lvl11/.config/scripts
+
+COPY  ./story.py /home/lvl11/.config/scripts/story.py
+
+COPY  ./lvl11/help.txt /home/lvl11/
+
+COPY ./lvl11/buns /home/lvl11/buns
+
+COPY ./lvl11/rocky.sh /usr/local/bin/rocky.sh
+
+COPY ./lvl11/bun.md5  /usr/local/rocky/bun.md5
+
+COPY ./lvl11/instruction.txt /home/lvl11/instruction.txt
+
+RUN chmod -R 555 /home/lvl11/.config/scripts &&\
+    chmod -R 555 /home/lvl11/help.txt &&\
+    chmod -R 555 /home/lvl11/instruction.txt &&\
+    mkdir /home/lvl11/dining_table &&\
+    chmod  751 /usr/local/bin/rocky.sh &&\
+    chmod  440 /usr/local/rocky/bun.md5 &&\
+    chmod 777 -R /home/lvl11/dining_table &&\
+    chmod 777 -R /home/lvl11/buns &&\
+    service ssh start &&\
+    echo "alias start='python3 /home/lvl11/.config/scripts/task.py' " >> /home/lvl11/.bashrc &&\
+    echo "export tries=4 && export ASSET_DIR='/home/lvl11/.config/scripts/assets/'" >> /home/lvl11/.bashrc &&\
+    echo "alias help='clear && cat /home/lvl11/help.txt'" >> /home/lvl11/.bashrc &&\
+    echo 'alias rocky="source rocky.sh"' >> /home/lvl11/.bashrc &&\
+    echo "rm -rf /home/lvl11/dining_table/* && clear && cat /home/lvl11/.config/scripts/assets/intro.txt" >> /home/lvl11/.bashrc 
+
+#====================================================================
+
+# level 12
+
+
 #Start ssh daemon
 
 EXPOSE 22
