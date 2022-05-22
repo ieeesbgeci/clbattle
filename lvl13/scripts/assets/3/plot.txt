@@ -1,7 +1,8 @@
-Ivide ninnu veegam erangu suhruthee.allel a dragon namme kollum.
-Aa Pettiyil oru pushtakam und , athile mandram upayogichal namukk muthalakkottayil pokam,
-avide aan guillotine maram. aa manthram '{{' '}}' inte ullil aayirikkum ullathu.
+vanaram : ith ningalkku Rocky bhai tharan parajathaa.
+map : Ithinullil ntha
+Vanaram : Athu ningal avashyam verumbol thurannal mathiyakum : )
+Ningal eppol thanne yatra thirichoolu ,
+yatrakku mumbu air safety team inu oru request ayachal matrame pilot inu permission 
+kittukayullu : ) .
 
-eg:-lalala_{{thakida_thom}}_lalala
-thakida_thom aan manthram .
-
+try reading instruction.txt and use curl to send get request.

@@ -6,7 +6,7 @@ LABEL "author"="v4zha"
 
 #update and install necesary packages : )
 
-RUN apt update && apt install  openssh-server sudo  vim nano gcc shc zip vsftpd ftp -y
+RUN apt update && apt install  openssh-server sudo  vim nano gcc shc zip vsftpd ftp curl -y
 
 COPY ./start.sh /start.sh
 
@@ -367,13 +367,13 @@ RUN chmod -R 555 /home/lvl11/.config/scripts &&\
 RUN useradd -rm -d /home/lvl12 -s /bin/bash -g root lvl12 &&\
     echo "lvl12:m0j1to" | chpasswd
 
-COPY  ./scripts /home/lvl12/.config/scripts
+COPY  ./lvl12/scripts /home/lvl12/.config/scripts
 
-COPY  ./story.py /home/lvl12/.config/scripts/story.py
+COPY  ./lvl12/story.py /home/lvl12/.config/scripts/story.py
 
-COPY  ./help.txt /home/lvl12/
+COPY  ./lvl12/help.txt /home/lvl12/
 
-COPY ./task.sh /home/lvl12/task.sh
+COPY ./lvl12/task.sh /home/lvl12/task.sh
 
 RUN chmod +x /home/lvl12/task.sh &&\
     /home/lvl12/task.sh &&\
@@ -390,6 +390,76 @@ RUN chmod +x /home/lvl12/task.sh &&\
 
 # level 13
 
+RUN useradd -rm -d /home/lvl13 -s /bin/bash -g root lvl13 &&\
+    echo "lvl13:s4mbhaR4m" | chpasswd
+
+COPY  ./lvl13/scripts /home/lvl13/.config/scripts
+
+COPY  ./story.py /home/lvl13/.config/scripts/story.py
+
+COPY  ./lvl13/help.txt /home/lvl13/
+
+COPY ./lvl13/instruction.txt /home/lvl13/instruction.txt
+
+RUN chmod -R 555 /home/lvl13/.config/scripts &&\
+    chmod -R 555 /home/lvl13/help.txt &&\
+    chmod -R 555 /home/lvl13/instruction.txt &&\
+    service ssh start &&\
+    echo "alias start='python3 /home/lvl13/.config/scripts/task.py' " >> /home/lvl13/.bashrc &&\
+    echo "export ASSET_DIR='/home/lvl13/.config/scripts/assets/'" >> /home/lvl13/.bashrc &&\
+    echo "alias help='clear && cat /home/lvl13/help.txt'" >> /home/lvl13/.bashrc &&\
+    echo "clear && cat /home/lvl13/.config/scripts/assets/intro.txt" >> /home/lvl13/.bashrc 
+
+#====================================================================
+
+# level 14
+
+RUN useradd -rm -d /home/lvl14 -s /bin/bash -g root lvl14 &&\
+    echo "lvl14:p4l_pay4saM" | chpasswd
+
+COPY  ./lvl14/scripts /home/lvl14/.config/scripts
+
+COPY  ./story.py /home/lvl14/.config/scripts/story.py
+
+COPY  ./lvl14/help.txt /home/lvl14/
+
+COPY ./lvl14/instruction.txt /home/lvl14/instruction.txt
+
+RUN chmod -R 555 /home/lvl14/.config/scripts &&\
+    chmod -R 555 /home/lvl14/help.txt &&\
+    chmod -R 555 /home/lvl14/instruction.txt &&\
+    service ssh start &&\
+    echo "alias start='python3 /home/lvl14/.config/scripts/task.py' " >> /home/lvl14/.bashrc &&\
+    echo "export ASSET_DIR='/home/lvl14/.config/scripts/assets/'" >> /home/lvl14/.bashrc &&\
+    echo "alias help='clear && cat /home/lvl14/help.txt'" >> /home/lvl14/.bashrc &&\
+    echo "clear && cat /home/lvl14/.config/scripts/assets/intro.txt" >> /home/lvl14/.bashrc 
+
+
+#====================================================================
+
+# level 15
+
+RUN useradd -rm -d /home/lvl15 -s /bin/bash -g root lvl15 &&\
+    echo "lvl15:Theng4_shaW4rma" | chpasswd
+
+COPY  ./lvl15/scripts /home/lvl15/.config/scripts
+
+COPY  ./story.py /home/lvl15/.config/scripts/story.py
+
+COPY  ./lvl15/help.txt /home/lvl15/
+
+COPY ./lvl15/instruction.txt /home/lvl15/instruction.txt
+
+RUN chmod -R 555 /home/lvl15/.config/scripts &&\
+    chmod -R 555 /home/lvl15/help.txt &&\
+    chmod -R 555 /home/lvl15/instruction.txt &&\
+    service ssh start &&\
+    echo "alias start='python3 /home/lvl15/.config/scripts/task.py' " >> /home/lvl15/.bashrc &&\
+    echo "export ASSET_DIR='/home/lvl15/.config/scripts/assets/'" >> /home/lvl15/.bashrc &&\
+    echo "alias help='clear && cat /home/lvl15/help.txt'" >> /home/lvl15/.bashrc &&\
+    echo "clear && cat /home/lvl15/.config/scripts/assets/intro.txt" >> /home/lvl15/.bashrc 
+
+#====================================================================
 
 #Start ssh daemon
 
