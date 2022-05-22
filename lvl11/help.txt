@@ -1,4 +1,5 @@
-md5sum,cp commands may come in handy : ) .
+md5sum,cp,cat commands may come in handy : ) .
+check the instruction.txt file for more info : ) .
 
 enter [start] to view the task again : ) .
 enter [start fast] to skip text delay : ) .
