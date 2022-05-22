@@ -8,7 +8,7 @@
                                                          
 =========================================================
 
-Welcome to Level 13 of CL Battle.
+Welcome to Level 14 of CL Battle.
 
 enter [start] to resume your adventure .
 enter [start fast] to ignore type delay.

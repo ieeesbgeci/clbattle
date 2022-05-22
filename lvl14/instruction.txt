@@ -1,0 +1,6 @@
+Air Safety instuction
+=========================
+ip:
+port: 
+
+send HTTP get request using curl.
