@@ -81,7 +81,7 @@ RUN service ssh start &&\
     echo "alias start='python3 /home/lvl1/.config/scripts/task.py' " >> /home/lvl1/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl1/.config/scripts/assets/'" >> /home/lvl1/.bashrc &&\
     echo "alias help='clear && cat /home/lvl1/help.txt'" >> /home/lvl1/.bashrc  &&\
-    echo "python3 /clean.py lvl1 && clear && cat /home/lvl1/.config/scripts/assets/intro.txt" >> /home/lvl1/.bashrc 
+    echo "python3 /clean.py lvl1 && clear && cat /home/lvl1/.config/scripts/assets/intro.txt" >> /home/lvl1/.bashrc &&\ 
     chmod +x /home/lvl2/task.sh &&\
     /home/lvl2/task.sh  &&\
     rm /home/lvl2/task.sh &&\
@@ -93,7 +93,7 @@ RUN service ssh start &&\
     echo "alias start='python3 /home/lvl2/.config/scripts/task.py' " >> /home/lvl2/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl2/.config/scripts/assets/'" >> /home/lvl2/.bashrc &&\
     echo "alias help='clear && cat /home/lvl2/help.txt'" >> /home/lvl2/.bashrc &&\
-    echo "python3 /clean.py lvl2 && clear && cat /home/lvl2/.config/scripts/assets/intro.txt" >> /home/lvl2/.bashrc 
+    echo "python3 /clean.py lvl2 && clear && cat /home/lvl2/.config/scripts/assets/intro.txt" >> /home/lvl2/.bashrc  &&\
     python3 /home/lvl3/file_gen.py &&\
     rm /home/lvl3/file_gen.py &&\
     chown lvl3 -R  /home/lvl3 &&\
@@ -104,7 +104,7 @@ RUN service ssh start &&\
     echo "alias start='python3 /home/lvl3/.config/scripts/task.py' " >> /home/lvl3/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl3/.config/scripts/assets/'" >> /home/lvl3/.bashrc &&\
     echo "alias help='clear && cat /home/lvl3/help.txt'" >> /home/lvl3/.bashrc &&\
-    echo "python3 /clean.py lvl3 && clear && cat /home/lvl3/.config/scripts/assets/intro.txt" >> /home/lvl3/.bashrc 
+    echo "python3 /clean.py lvl3 && clear && cat /home/lvl3/.config/scripts/assets/intro.txt" >> /home/lvl3/.bashrc &&\
     chmod +x /home/lvl4/task.sh &&\
     /home/lvl4/task.sh &&\
     rm /home/lvl4/task.sh &&\
@@ -115,7 +115,7 @@ RUN service ssh start &&\
     echo "alias start='python3 /home/lvl4/.config/scripts/task.py' " >> /home/lvl4/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl4/.config/scripts/assets/'" >> /home/lvl4/.bashrc &&\
     echo "alias help='clear && cat /home/lvl4/help.txt'" >> /home/lvl4/.bashrc &&\
-    echo "python3 /clean.py lvl4 && touch /home/lvl4/rahasyam && rm /home/lvl4/rahasyam &&  clear && cat /home/lvl4/.config/scripts/assets/intro.txt" >> /home/lvl4/.bashrc 
+    echo "python3 /clean.py lvl4 && touch /home/lvl4/rahasyam && rm /home/lvl4/rahasyam &&  clear && cat /home/lvl4/.config/scripts/assets/intro.txt" >> /home/lvl4/.bashrc &&\
     chmod +x /home/lvl5/task.sh &&\
     /home/lvl5/task.sh &&\
     rm /home/lvl5/task.sh &&\
