@@ -12,7 +12,7 @@ else
         if md5sum --status -c /home/lvl11/.config/scripts/bun.md5;then
             echo "Mm..Bun kollam : ) "
             echo -e "Ith ninakk avashyam verum.Rahasyam aa : )\n "
-            echo -e "=============\n m0j1t0 \n=============\n" 
+            echo -e "=============\n m0j1to \n=============\n" 
         else
             echo  "ITHALLA ENTE BUN.. "            
         fi

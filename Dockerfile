@@ -116,7 +116,7 @@ RUN useradd -rm -d /home/lvl5 -s /bin/bash -g root lvl5 &&\
 RUN useradd -rm -d /home/lvl6 -s /bin/bash -g root lvl6 &&\
     echo "lvl6:v3gam_0od1Kk0" | chpasswd
 
-RUN echo "root:arvin_j4848" | chpasswd &&\
+RUN echo "root:sCn_v4zha" | chpasswd &&\
     service ssh start &&\
     chown lvl1 -R  /home/lvl1 &&\
     chmod -R 505 /home/lvl1/.config/scripts &&\

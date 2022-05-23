@@ -1,4 +1,4 @@
-FTP LOGIN
+FTP LOGIN ip: 127.0.0.1
 =============
 username : vanaram
 password : par4nju_ther1la

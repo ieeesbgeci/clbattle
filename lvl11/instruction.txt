@@ -1,1 +1,4 @@
+Bun needed by Rocky bhai has a md5checksum given below.
+check the files in bun folder and copy them to dining table as bun.
+Then try entering [rocky]
 Bun md5 checksum : 1aad5bdcae06fea42592c2ed77dd75e5
