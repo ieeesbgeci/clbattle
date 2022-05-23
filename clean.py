@@ -3,7 +3,7 @@ import sys
 
 lvl=sys.argv[1]
 required= set()
-with open('/{lvl}/required.txt') as f:
+with open(f'/{lvl}/required.txt') as f:
      for line in f:
          required.add(line.strip())
 
