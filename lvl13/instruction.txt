@@ -1,0 +1,7 @@
+Send Get request using curl
+Air Safety Permission
+======================
+Request type : Get 
+ip : 
+port : 
+endpoint: http://[ip]:[port]/lvl13/airsafe

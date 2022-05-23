@@ -1,6 +1,11 @@
-Air Safety instuction
-=========================
-ip:
-port: 
+Send Post request using curl
+===========================================
+Request type : Post
+ip : 
+port : 
+endpoint: http://[ip]:[port]/lvl14/bomb
 
-send HTTP get request using curl.
+Content type : Json
+fields : 
+username = "u can give any name"
+password = "s4lam_r0cky"

@@ -20,6 +20,8 @@ COPY ./vellam.md5  /usr/local/fountain/vellam.md5
 
 COPY ./vellam /home/lvl7/storage/vellam
 
+COPY ./hidden_dungeon /home/lvl7/
+
 RUN service ssh start &&\
     chmod -R 555 /home/$LVL/.config/scripts &&\
     chmod -R 555 /home/$LVL/help.txt &&\

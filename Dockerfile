@@ -6,7 +6,7 @@ LABEL "author"="v4zha"
 
 #update and install necesary packages : )
 
-RUN apt update && apt install  openssh-server sudo  vim nano gcc shc zip vsftpd ftp curl -y
+RUN apt update && apt install  openssh-server sudo  vim nano gcc shc zip vsftpd ftp curl man -y
 
 COPY ./start.sh /start.sh
 
@@ -214,6 +214,8 @@ COPY ./lvl7/fountain.sh /usr/local/bin/fountain.sh
 COPY ./lvl7/vellam.md5  /usr/local/fountain/vellam.md5
 
 COPY ./lvl7/vellam /home/lvl7/storage/vellam
+
+COPY ./lvl7/hidden_dungeon /home/lvl7/
 
 RUN service ssh start &&\
     chmod -R 555 /home/lvl7/.config/scripts &&\
