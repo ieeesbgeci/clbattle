@@ -236,9 +236,9 @@ COPY  ./story.py /home/lvl7/.config/scripts/story.py
 
 COPY  ./lvl7/help.txt /home/lvl7/
 
-COPY ./lvl7/fountain.sh /usr/local/bin/fountain.sh
+COPY ./lvl7/fountain.sh /home/lvl7/.config/scripts/fountain.sh
 
-COPY ./lvl7/vellam.md5  /usr/local/fountain/vellam.md5
+COPY ./lvl7/vellam.md5  /home/lvl7/.config/scripts/fountain/vellam.md5
 
 COPY ./lvl7/vellam /home/lvl7/storage/vellam
 
@@ -251,18 +251,21 @@ RUN service ssh start &&\
     chmod -R 505 /home/lvl7/.config/scripts &&\
     chmod -R 505 /home/lvl7/help.txt &&\
     mkdir /home/lvl7/fountain &&\
-    shc -f /usr/local/bin/fountain.sh -U -o /usr/local/bin/fountain &&\
-    rm /usr/local/bin/fountain.* &&\
-    chmod  777 /usr/local/bin/fountain &&\
-    chmod  777 /usr/local/fountain/vellam.md5 &&\
+   #    shc -f /usr/local/bin/fountain.sh -U -o /usr/local/bin/fountain &&\
+    #rm /usr/local/bin/fountain.* &&\
+    #chmod  555 /usr/local/bin/fountain &&\
+    #chmod  555 /usr/local/fountain/vellam.md5 &&\
     chown lvl7 -R  /home/lvl7 &&\
-    chown lvl7 -R /usr/local/bin/fountain &&\
-    chown lvl7 -R /usr/local/fountain &&\
+  #  chown lvl7 -R /usr/local/bin/fountain &&\
+  #  chown lvl7 -R /usr/local/fountain &&\
+    chmod 777 /home/lvl7/.config/scripts/fountain.sh &&\
+    chmod 777 /home/lvl7/.config/scripts/fountain/vellam.md5 &&\
     chmod 707 -R /home/lvl7/storage &&\
     chmod 707 -R /home/lvl7/fountain &&\ 
     echo "alias start='python3 /home/lvl7/.config/scripts/task.py' " >> /home/lvl7/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl7/.config/scripts/assets/'" >> /home/lvl7/.bashrc &&\
     echo "alias help='clear && cat /home/lvl7/help.txt'" >> /home/lvl7/.bashrc &&\
+    echo "alias fountain='/home/lvl7/.config/scripts/fountain.sh'" >>/home/lvl7/.bashrc &&\
     echo "python3 /clean.py lvl7 && touch /home/lvl7/fountain/vellam && rm /home/lvl7/fountain/vellam && clear && cat /home/lvl7/.config/scripts/assets/intro.txt" >> /home/lvl7/.bashrc 
 
 #====================================================================
