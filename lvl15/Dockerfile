@@ -18,9 +18,9 @@ COPY ./instruction.txt /home/$LVL/instruction.txt
 
 COPY ./required.txt /$LVL/required.txt
 
-RUN chmod -R 555 /home/$LVL/.config/scripts &&\
-    chmod -R 555 /home/$LVL/help.txt &&\
-    chmod -R 555 /home/$LVL/instruction.txt &&\
+RUN chmod -R 505 /home/$LVL/.config/scripts &&\
+    chmod -R 505 /home/$LVL/help.txt &&\
+    chmod -R 505 /home/$LVL/instruction.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\

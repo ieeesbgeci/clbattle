@@ -25,15 +25,15 @@ COPY ./hidden_dungeon /home/lvl7/
 COPY ./required.txt /$LVL/required.txt
 
 RUN service ssh start &&\
-    chmod -R 555 /home/$LVL/.config/scripts &&\
-    chmod -R 555 /home/$LVL/help.txt &&\
+    chmod -R 505 /home/$LVL/.config/scripts &&\
+    chmod -R 505 /home/$LVL/help.txt &&\
     mkdir /home/lvl7/fountain &&\
     shc -f /usr/local/bin/fountain.sh -U -o /usr/local/bin/fountain &&\
     rm /usr/local/bin/fountain.* &&\
     chmod  751 /usr/local/bin/fountain &&\
     chmod  440 /usr/local/fountain/vellam.md5 &&\
-    chmod 555 -R /home/lvl7/storage &&\
-    chmod 555 -R /home/lvl7/fountain &&\
+    chmod 505 -R /home/lvl7/storage &&\
+    chmod 505 -R /home/lvl7/fountain &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\

@@ -29,9 +29,9 @@ RUN useradd -rm -d /home/vanaram -s /bin/bash -g root vanaram &&\
     chmod +x start.sh &&\
     mkdir /ftp &&\
     echo "AppY_f1zZ" > /ftp/rahasyam &&\
-    chmod -R 555 /home/$LVL/.config/scripts &&\
-    chmod -R 555 /home/$LVL/help.txt &&\
-    chmod -R 555 /home/$LVL/vanaram_ftp.txt &&\
+    chmod -R 505 /home/$LVL/.config/scripts &&\
+    chmod -R 505 /home/$LVL/help.txt &&\
+    chmod -R 505 /home/$LVL/vanaram_ftp.txt &&\
     service ssh start &&\
     service vsftpd start &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\

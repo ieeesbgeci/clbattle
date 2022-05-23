@@ -20,10 +20,10 @@ RUN useradd -rm -d /home/gopan -s /bin/bash -g root gopan &&\
     echo "gopan:agentX" | chpasswd &&\
     echo -e "============\null1_v4da\n============\n" > /home/gopan/rahasyam &&\
     echo -e "thaka thaka..thalayude_vilayattu..\n [agentX]\n" > /home/$LVL/.thaka_thaka.txt &&\
-    chmod -R 555 /home/$LVL/.config/scripts &&\
-    chmod -R 555 /home/$LVL/help.txt &&\
-    chmod -R 555 /home/gopan/rahasyam &&\
-    chmod -R 555 /home/$LVL/.thaka_thaka.txt &&\
+    chmod -R 505 /home/$LVL/.config/scripts &&\
+    chmod -R 505 /home/$LVL/help.txt &&\
+    chmod -R 505 /home/gopan/rahasyam &&\
+    chmod -R 505 /home/$LVL/.thaka_thaka.txt &&\
     service ssh start &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
