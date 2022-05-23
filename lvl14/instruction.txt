@@ -1,9 +1,8 @@
 Send Post request using curl
 ===========================================
 Request type : Post
-ip : 127.0.0.1
-port : 8080
-endpoint: http://[ip]:[port]/lvl14/bomb
+Host : https://clbattle.herokuapp.com
+endpoint: /lvl14/bomb
 
 Content type : Json
 fields : 

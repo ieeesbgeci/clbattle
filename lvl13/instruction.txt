@@ -2,6 +2,5 @@ Send Get request using curl
 Air Safety Permission
 ======================
 Request type : Get 
-ip : 127.0.0.1
-port : 8080
-endpoint: http://[ip]:[port]/lvl13/airsafe
+Host : https://clbattle.herokuapp.com
+endpoint: /lvl13/airsafe

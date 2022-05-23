@@ -1,1 +1,1 @@
-web: ./target/release/discord-db-api
+web: ./target/release/clbattle_api
