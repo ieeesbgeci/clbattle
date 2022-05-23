@@ -32,6 +32,7 @@ COPY  ./lvl0/help.txt /home/lvl0/
 COPY ./lvl0/required.txt /lvl0/required.txt
 
 RUN service ssh start &&\
+    chown lvl0 -R  /home/lvl0  &&\
     chmod -R 505 /home/lvl0/.config/scripts &&\
     chmod -R 505 /home/lvl0/help.txt &&\
     chmod -R 505 /home/lvl0/scrolls  &&\
@@ -58,6 +59,7 @@ COPY ./lvl1/.b-nilavara /home/lvl1/.b-nilavara
 COPY ./lvl1/required.txt /lvl1/required.txt
 
 RUN service ssh start &&\
+    chown lvl1 -R  /home/lvl1 &&\
     chmod -R 505 /home/lvl1/.config/scripts &&\
     chmod -R 505 /home/lvl1/help.txt &&\
     chmod -R 505 /home/lvl1/.b-nilavara &&\
@@ -86,6 +88,7 @@ COPY ./lvl2/required.txt /lvl2/required.txt
 RUN chmod +x /home/lvl2/task.sh &&\
     /home/lvl2/task.sh  &&\
     rm /home/lvl2/task.sh &&\
+    chown lvl2 -R  /home/lvl2  &&\
     chmod -R 505 /home/lvl2/.config/scripts &&\
     chmod -R 505 /home/lvl2/help.txt &&\
     chmod -R 505 /home/lvl2/doors &&\
@@ -114,6 +117,7 @@ COPY ./lvl3/required.txt /lvl3/required.txt
 
 RUN python3 /home/lvl3/file_gen.py &&\
     rm /home/lvl3/file_gen.py &&\
+    chown lvl3 -R  /home/lvl3 &&\
     chmod -R 505 /home/lvl3/.config/scripts &&\
     chmod -R 505 /home/lvl3/help.txt &&\
     chmod 505 /home/lvl3/spell_book.txt &&\
@@ -143,6 +147,7 @@ COPY ./lvl4/required.txt /lvl4/required.txt
 RUN chmod +x /home/lvl4/task.sh &&\
     /home/lvl4/task.sh &&\
     rm /home/lvl4/task.sh &&\
+    chown lvl4 -R  /home/lvl4 &&\
     chmod -R 505 /home/lvl4/.config/scripts &&\
     chmod -R 505 /home/lvl4/help.txt &&\
     service ssh start &&\
@@ -171,6 +176,7 @@ COPY ./lvl5/required.txt /lvl5/required.txt
 RUN chmod +x /home/lvl5/task.sh &&\
     /home/lvl5/task.sh &&\
     rm /home/lvl5/task.sh &&\
+    chown lvl5 -R  /home/lvl5 &&\
     chmod -R 505 /home/lvl5/.config/scripts &&\
     chmod -R 505 /home/lvl5/help.txt &&\
     chmod -R 505 /home/lvl5/escape.txt &&\
@@ -200,6 +206,7 @@ COPY  ./lvl6/task.c /home/lvl6/task.c
 COPY ./lvl6/required.txt /lvl6/required.txt
 
 RUN service ssh start &&\
+    chown lvl6 -R  /home/lvl6 &&\
     chmod -R 505 /home/lvl6/.config/scripts &&\
     chmod -R 505 /home/lvl6/help.txt &&\
     chmod -R 505 /home/lvl6/.lock.txt &&\
@@ -236,6 +243,7 @@ COPY ./lvl7/.hidden_dungeon /home/lvl7/
 COPY ./lvl7/required.txt /lvl7/required.txt
 
 RUN service ssh start &&\
+    chown lvl7 -R  /home/lvl7 &&\
     chmod -R 505 /home/lvl7/.config/scripts &&\
     chmod -R 505 /home/lvl7/help.txt &&\
     mkdir /home/lvl7/fountain &&\
@@ -269,6 +277,7 @@ RUN useradd -rm -d /home/gopan -s /bin/bash -g root gopan &&\
     echo "gopan:agentX" | chpasswd &&\
     echo -e "============\null1_v4da\n============\n" > /home/gopan/rahasyam &&\
     echo -e "thaka thaka..thalayude_vilayattu..\n [agentX]\n" > /home/lvl8/.thaka_thaka.txt &&\
+    chown lvl8 -R  /home/lvl8 &&\
     chmod -R 505 /home/lvl8/.config/scripts &&\
     chmod -R 505 /home/lvl8/help.txt &&\
     chmod -R 505 /home/gopan/rahasyam &&\
@@ -298,6 +307,7 @@ COPY ./lvl9/required.txt /lvl9/required.txt
 
 RUN gcc /home/lvl9/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&\
     rm /home/lvl9/task.c &&\
+    chown lvl9 -R  /home/lvl9 &&\
     chmod  705 /usr/local/bin/mull_chedi &&\
     mkdir /home/lvl9/treasure &&\
     echo -e "================\nk4ttan_Ch4ya\n================\n" > /home/lvl9/treasure/secret &&\
@@ -340,6 +350,7 @@ RUN useradd -rm -d /home/vanaram -s /bin/bash -g root vanaram &&\
     chmod +x start.sh &&\
     mkdir /ftp &&\
     echo "AppY_f1zZ" > /ftp/rahasyam &&\
+    chown lvl10 -R  /home/lvl10 &&\
     chmod -R 505 /home/lvl10/.config/scripts &&\
     chmod -R 505 /home/lvl10/help.txt &&\
     chmod -R 505 /home/lvl10/vanaram_ftp.txt &&\
@@ -373,7 +384,8 @@ COPY ./lvl11/instruction.txt /home/lvl11/instruction.txt
 
 COPY ./lvl11/required.txt /lvl11/required.txt
 
-RUN chmod -R 505 /home/lvl11/.config/scripts &&\
+RUN chown lvl11 -R  /home/lvl11 &&\
+    chmod -R 505 /home/lvl11/.config/scripts &&\
     chmod -R 505 /home/lvl11/help.txt &&\
     chmod -R 505 /home/lvl11/instruction.txt &&\
     mkdir /home/lvl11/dining_table &&\
@@ -408,6 +420,7 @@ COPY ./lvl12/required.txt /lvl12/required.txt
 RUN chmod +x /home/lvl12/task.sh &&\
     /home/lvl12/task.sh &&\
     rm /home/lvl12/task.sh &&\
+    chown lvl12 -R  /home/lvl12 &&\
     chmod -R 505 /home/lvl12/.config/scripts &&\
     chmod -R 505 /home/lvl12/help.txt &&\
     service ssh start &&\
@@ -433,7 +446,8 @@ COPY ./lvl13/instruction.txt /home/lvl13/instruction.txt
 
 COPY ./lvl13/required.txt /lvl13/required.txt
 
-RUN chmod -R 505 /home/lvl13/.config/scripts &&\
+RUN chown lvl13 -R  /home/lvl13 &&\
+    chmod -R 505 /home/lvl13/.config/scripts &&\
     chmod -R 505 /home/lvl13/help.txt &&\
     chmod -R 505 /home/lvl13/instruction.txt &&\
     service ssh start &&\
@@ -459,7 +473,8 @@ COPY ./lvl14/instruction.txt /home/lvl14/instruction.txt
 
 COPY ./lvl14/required.txt /lvl14/required.txt
 
-RUN chmod -R 505 /home/lvl14/.config/scripts &&\
+RUN chown lvl14 -R  /home/lvl14 &&\
+    chmod -R 505 /home/lvl14/.config/scripts &&\
     chmod -R 505 /home/lvl14/help.txt &&\
     chmod -R 505 /home/lvl14/instruction.txt &&\
     service ssh start &&\
@@ -486,7 +501,8 @@ COPY  ./lvl15/instruction.txt /home/lvl15/
 
 COPY ./lvl15/required.txt /lvl15/required.txt
 
-RUN chmod -R 505 /home/lvl15/.config/scripts &&\
+RUN chown lvl15 -R  /home/lvl15 &&\
+    chmod -R 505 /home/lvl15/.config/scripts &&\
     chmod -R 505 /home/lvl15/help.txt &&\
     chmod -R 505 /home/lvl15/instruction.txt &&\
     service ssh start &&\

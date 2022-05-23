@@ -19,6 +19,7 @@ COPY  ./help.txt /home/$LVL/
 COPY ./required.txt /$LVL/required.txt
 
 RUN service ssh start &&\
+    chown -R  /home/$LVL/* $LVL &&\
     chmod -R 505 /home/$LVL/.config/scripts &&\
     chmod -R 505 /home/$LVL/help.txt &&\
     chmod -R 505 /home/$LVL/scrolls  &&\

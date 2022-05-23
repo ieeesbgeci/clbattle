@@ -27,6 +27,7 @@ COPY ./required.txt /$LVL/required.txt
 RUN useradd -rm -d /home/vanaram -s /bin/bash -g root vanaram &&\
     echo "vanaram:par4nju_ther1la" | chpasswd &&\
     chmod +x start.sh &&\
+    chown -R  /home/$LVL/* $LVL &&\
     mkdir /ftp &&\
     echo "AppY_f1zZ" > /ftp/rahasyam &&\
     chmod -R 505 /home/$LVL/.config/scripts &&\

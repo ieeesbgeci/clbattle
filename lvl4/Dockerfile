@@ -21,6 +21,7 @@ COPY ./required.txt /$LVL/required.txt
 RUN chmod +x /home/$LVL/task.sh &&\
     /home/$LVL/task.sh &&\
     rm /home/$LVL/task.sh &&\
+    chown -R  /home/$LVL/* $LVL &&\
     chmod -R 505 /home/$LVL/.config/scripts &&\
     chmod -R 505 /home/$LVL/help.txt &&\
     service ssh start &&\

@@ -24,7 +24,8 @@ COPY ./instruction.txt /home/$LVL/instruction.txt
 
 COPY ./required.txt /$LVL/required.txt
 
-RUN chmod -R 505 /home/$LVL/.config/scripts &&\
+RUN chown -R  /home/$LVL/* $LVL &&\
+    chmod -R 505 /home/$LVL/.config/scripts &&\
     chmod -R 505 /home/$LVL/help.txt &&\
     chmod -R 505 /home/$LVL/instruction.txt &&\
     mkdir /home/$LVL/dining_table &&\

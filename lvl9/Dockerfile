@@ -20,7 +20,8 @@ COPY ./required.txt /$LVL/required.txt
 
 RUN gcc /home/$LVL/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&\
     rm /home/$LVL/task.c &&\
-    chmod  751 /usr/local/bin/mull_chedi &&\
+    chown -R  /home/$LVL/* $LVL &&\
+    chmod  705 /usr/local/bin/mull_chedi &&\
     mkdir /home/$LVL/treasure &&\
     echo -e "================\nk4ttan_Ch4ya\n================\n" > /home/$LVL/treasure/secret &&\
     cd /home/$LVL/ && zip -r --password thur4nNu_v4a treasure.zip treasure &&\

@@ -20,6 +20,7 @@ COPY ./required.txt /$LVL/required.txt
 
 RUN python3 /home/$LVL/file_gen.py &&\
     rm /home/$LVL/file_gen.py &&\
+    chown -R  /home/$LVL/* $LVL &&\
     chmod -R 505 /home/$LVL/.config/scripts &&\
     chmod -R 505 /home/$LVL/help.txt &&\
     chmod 505 /home/$LVL/spell_book.txt &&\

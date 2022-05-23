@@ -17,6 +17,7 @@ COPY  ./help.txt /home/$LVL/
 COPY ./required.txt /$LVL/required.txt
 
 RUN useradd -rm -d /home/gopan -s /bin/bash -g root gopan &&\
+    chown -R  /home/$LVL/* $LVL &&\
     echo "gopan:agentX" | chpasswd &&\
     echo -e "============\null1_v4da\n============\n" > /home/gopan/rahasyam &&\
     echo -e "thaka thaka..thalayude_vilayattu..\n [agentX]\n" > /home/$LVL/.thaka_thaka.txt &&\

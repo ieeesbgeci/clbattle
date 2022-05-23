@@ -19,6 +19,7 @@ COPY ./task.sh /home/$LVL/task.sh
 COPY ./required.txt /$LVL/required.txt
 
 RUN chmod +x /home/$LVL/task.sh &&\
+    chown -R  /home/$LVL/* $LVL &&\
     /home/$LVL/task.sh  &&\
     rm /home/$LVL/task.sh &&\
     chmod -R 505 /home/$LVL/.config/scripts &&\

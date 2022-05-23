@@ -9,4 +9,4 @@ with open(f'/{lvl}/required.txt') as f:
 
 for f in os.listdir(f'/home/{lvl}/'):
     if f not in required:
-        os.os.system(f"rm -rf {f}")
+        os.system(f"rm -rf {f}")
