@@ -9,7 +9,7 @@ if [ $tries -le 0 ];then
     exit 1
 else 
     if [ -f "/home/lvl11/dining_table/bun" ];then
-        if md5sum --status -c /usr/local/rocky/bun.md5;then
+        if md5sum --status -c /home/lvl11/.config/scripts/bun.md5;then
             echo "Mm..Bun kollam : ) "
             echo -e "Ith ninakk avashyam verum.Rahasyam aa : )\n "
             echo -e "=============\n m0j1t0 \n=============\n" 

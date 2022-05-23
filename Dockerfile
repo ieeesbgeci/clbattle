@@ -390,19 +390,20 @@ COPY  ./lvl11/help.txt /home/lvl11/
 
 COPY ./lvl11/buns /home/lvl11/buns
 
-COPY ./lvl11/rocky.sh /usr/local/bin/rocky.sh
+COPY ./lvl11/rocky.sh /home/lvl11/.config/scripts/rocky.sh
 
-COPY ./lvl11/bun.md5  /usr/local/rocky/bun.md5
+COPY ./lvl11/bun.md5  /home/lvl11/.config/scripts/bun.md5
 
 COPY ./lvl11/instruction.txt /home/lvl11/instruction.txt
 
 COPY ./lvl11/required.txt /lvl11/required.txt
 
-RUN chown lvl11 -R  /home/lvl11 &&\
+RUN mkdir /home/lvl11/dining_table &&\
+    chown lvl11 -R  /home/lvl11 &&\
     chmod -R 505 /home/lvl11/.config/scripts &&\
     chmod -R 505 /home/lvl11/help.txt &&\
-    chmod -R 505 /home/lvl11/instruction.txt &&\
-    mkdir /home/lvl11/dining_table &&\
+    chmod -R 505 /home/lvl11/instruction.txt &&\ 
+    chmod -R 777 /home/lvl11/dining_table &&\
     chmod  705 /usr/local/bin/rocky.sh &&\
     chmod  404 /usr/local/rocky/bun.md5 &&\
     chmod 707 -R /home/lvl11/dining_table &&\
@@ -411,7 +412,7 @@ RUN chown lvl11 -R  /home/lvl11 &&\
     echo "alias start='python3 /home/lvl11/.config/scripts/task.py' " >> /home/lvl11/.bashrc &&\
     echo "export tries=4 && export ASSET_DIR='/home/lvl11/.config/scripts/assets/'" >> /home/lvl11/.bashrc &&\
     echo "alias help='clear && cat /home/lvl11/help.txt'" >> /home/lvl11/.bashrc &&\
-    echo 'alias rocky="source rocky.sh"' >> /home/lvl11/.bashrc &&\
+    echo 'alias rocky="source /home/lvl11/.config/scripts/rocky.sh"' >> /home/lvl11/.bashrc &&\
     echo "python3 /clean.py lvl11 && rm -rf /home/lvl11/dining_table/* && clear && cat /home/lvl11/.config/scripts/assets/intro.txt" >> /home/lvl11/.bashrc 
 
 #====================================================================
