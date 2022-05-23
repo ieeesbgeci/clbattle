@@ -254,8 +254,10 @@ RUN service ssh start &&\
     shc -f /usr/local/bin/fountain.sh -U -o /usr/local/bin/fountain &&\
     rm /usr/local/bin/fountain.* &&\
     chmod  777 /usr/local/bin/fountain &&\
-    chmod  444 /usr/local/fountain/vellam.md5 &&\
+    chmod  777 /usr/local/fountain/vellam.md5 &&\
     chown lvl7 -R  /home/lvl7 &&\
+    chown lvl7 -R /usr/local/bin/fountain &&\
+    chown lvl7 -R /usr/local/fountain &&\
     chmod 707 -R /home/lvl7/storage &&\
     chmod 707 -R /home/lvl7/fountain &&\ 
     echo "alias start='python3 /home/lvl7/.config/scripts/task.py' " >> /home/lvl7/.bashrc &&\
