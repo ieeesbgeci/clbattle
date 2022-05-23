@@ -318,10 +318,10 @@ COPY ./lvl9/task.c /home/lvl9/task.c
 
 COPY ./lvl9/required.txt /lvl9/required.txt
 
-RUN gcc /home/lvl9/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&\
+RUN gcc /home/lvl9/task.c -O3 -Wno-unused-result -o /home/lvl9/.config/scripts/mull_chedi &&\
     rm /home/lvl9/task.c &&\
     chown lvl9 -R  /home/lvl9 &&\
-    chmod  705 /usr/local/bin/mull_chedi &&\
+    # chmod  705 /usr/local/bin/mull_chedi &&\
     mkdir /home/lvl9/treasure &&\
     echo -e "================\nk4ttan_Ch4ya\n================\n" > /home/lvl9/treasure/secret &&\
     cd /home/lvl9/ && zip -r --password thur4nNu_v4a treasure.zip treasure &&\
@@ -332,6 +332,7 @@ RUN gcc /home/lvl9/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&
     echo "alias start='python3 /home/lvl9/.config/scripts/task.py' " >> /home/lvl9/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl9/.config/scripts/assets/'" >> /home/lvl9/.bashrc &&\
     echo "alias help='clear && cat /home/lvl9/help.txt'" >> /home/lvl9/.bashrc &&\
+    echo "alias mull_chedi='/home/lvl9/.config/scripts/mull_chedi'" >> /home/lvl9/.bashrc &&\
     echo "mull_chedi &">>/home/lvl9/.bashrc &&\
     echo "python3 /clean.py lvl9 && touch treasure && rm -rf /home/lvl9/treasure && clear && cat /home/lvl9/.config/scripts/assets/intro.txt" >> /home/lvl9/.bashrc 
 
