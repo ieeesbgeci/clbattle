@@ -3,3 +3,5 @@ help.txt
 .bashrc
 .config
 doors
+.bash_history
+.bash_logout

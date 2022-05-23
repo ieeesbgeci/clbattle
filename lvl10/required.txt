@@ -3,3 +3,5 @@ help.txt
 .bashrc
 .config
 vanaram_ftp.txt
+.bash_history
+.bash_logout

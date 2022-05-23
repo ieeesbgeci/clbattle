@@ -4,3 +4,5 @@ help.txt
 .config
 .lock.txt
 lever
+.bash_history
+.bash_logout

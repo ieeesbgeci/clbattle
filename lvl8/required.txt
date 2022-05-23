@@ -3,3 +3,5 @@ help.txt
 .bashrc
 .config
 thakida_thakida.txt
+.bash_history
+.bash_logout

@@ -5,3 +5,5 @@ help.txt
 buns
 instruction.txt
 dining_table
+.bash_history
+.bash_logout

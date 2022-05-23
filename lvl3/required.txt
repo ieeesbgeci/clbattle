@@ -3,3 +3,5 @@ help.txt
 .bashrc
 .config
 spell_book.txt
+.bash_history
+.bash_logout
