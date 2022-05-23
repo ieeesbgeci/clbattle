@@ -58,21 +58,6 @@ COPY ./lvl1/.b-nilavara /home/lvl1/.b-nilavara
 
 COPY ./lvl1/required.txt /lvl1/required.txt
 
-RUN useradd -rm -d /home/lvl2 -s /bin/bash -g root lvl2 &&\
-    echo "lvl2:kunj1_kuRuV1" | chpasswd
-
-RUN useradd -rm -d /home/lvl3 -s /bin/bash -g root lvl3 &&\
-    echo "lvl3:k4rukaVay4l_kuruv1" | chpasswd
-
-RUN useradd -rm -d /home/lvl4 -s /bin/bash -g root lvl4 &&\
-echo "lvl4:ambala_pr4vu" | chpasswd
-
-RUN useradd -rm -d /home/lvl5 -s /bin/bash -g root lvl5 &&\
-    echo "lvl5:k4tTu_mynh4" | chpasswd
-
-RUN useradd -rm -d /home/lvl6 -s /bin/bash -g root lvl6 &&\
-    echo "lvl6:v3gam_0od1Kk0" | chpasswd
-
 RUN service ssh start &&\
     chown lvl1 -R  /home/lvl1 &&\
     chmod -R 505 /home/lvl1/.config/scripts &&\
@@ -82,7 +67,25 @@ RUN service ssh start &&\
     echo "export ASSET_DIR='/home/lvl1/.config/scripts/assets/'" >> /home/lvl1/.bashrc &&\
     echo "alias help='clear && cat /home/lvl1/help.txt'" >> /home/lvl1/.bashrc  &&\
     echo "python3 /clean.py lvl1 && clear && cat /home/lvl1/.config/scripts/assets/intro.txt" >> /home/lvl1/.bashrc 
-    chmod +x /home/lvl2/task.sh &&\
+
+#====================================================================
+
+# level 2
+
+RUN useradd -rm -d /home/lvl2 -s /bin/bash -g root lvl2 &&\
+    echo "lvl2:kunj1_kuRuV1" | chpasswd
+
+COPY  ./lvl2/scripts /home/lvl2/.config/scripts
+
+COPY  ./story.py /home/lvl2/.config/scripts/story.py
+
+COPY  ./lvl2/help.txt /home/lvl2/
+
+COPY ./lvl2/task.sh /home/lvl2/task.sh
+
+COPY ./lvl2/required.txt /lvl2/required.txt
+
+RUN chmod +x /home/lvl2/task.sh &&\
     /home/lvl2/task.sh  &&\
     rm /home/lvl2/task.sh &&\
     chown lvl2 -R  /home/lvl2  &&\
@@ -94,7 +97,25 @@ RUN service ssh start &&\
     echo "export ASSET_DIR='/home/lvl2/.config/scripts/assets/'" >> /home/lvl2/.bashrc &&\
     echo "alias help='clear && cat /home/lvl2/help.txt'" >> /home/lvl2/.bashrc &&\
     echo "python3 /clean.py lvl2 && clear && cat /home/lvl2/.config/scripts/assets/intro.txt" >> /home/lvl2/.bashrc 
-    python3 /home/lvl3/file_gen.py &&\
+
+#====================================================================
+
+# level 3
+
+RUN useradd -rm -d /home/lvl3 -s /bin/bash -g root lvl3 &&\
+    echo "lvl3:k4rukaVay4l_kuruv1" | chpasswd
+
+COPY  ./lvl3/scripts /home/lvl3/.config/scripts
+
+COPY  ./story.py /home/lvl3/.config/scripts/story.py
+
+COPY  ./lvl3/help.txt /home/lvl3/
+
+COPY ./lvl3/file_gen.py /home/lvl3/file_gen.py
+
+COPY ./lvl3/required.txt /lvl3/required.txt
+
+RUN python3 /home/lvl3/file_gen.py &&\
     rm /home/lvl3/file_gen.py &&\
     chown lvl3 -R  /home/lvl3 &&\
     chmod -R 505 /home/lvl3/.config/scripts &&\
@@ -105,7 +126,25 @@ RUN service ssh start &&\
     echo "export ASSET_DIR='/home/lvl3/.config/scripts/assets/'" >> /home/lvl3/.bashrc &&\
     echo "alias help='clear && cat /home/lvl3/help.txt'" >> /home/lvl3/.bashrc &&\
     echo "python3 /clean.py lvl3 && clear && cat /home/lvl3/.config/scripts/assets/intro.txt" >> /home/lvl3/.bashrc 
-    chmod +x /home/lvl4/task.sh &&\
+
+#====================================================================
+
+# level 4
+
+RUN useradd -rm -d /home/lvl4 -s /bin/bash -g root lvl4 &&\
+echo "lvl4:ambala_pr4vu" | chpasswd
+
+COPY  ./lvl4/scripts /home/lvl4/.config/scripts
+
+COPY  ./story.py /home/lvl4/.config/scripts/story.py
+
+COPY  ./lvl4/help.txt /home/lvl4/
+
+COPY ./lvl4/task.sh /home/lvl4/task.sh
+
+COPY ./lvl4/required.txt /lvl4/required.txt
+
+RUN chmod +x /home/lvl4/task.sh &&\
     /home/lvl4/task.sh &&\
     rm /home/lvl4/task.sh &&\
     chown lvl4 -R  /home/lvl4 &&\
@@ -116,7 +155,25 @@ RUN service ssh start &&\
     echo "export ASSET_DIR='/home/lvl4/.config/scripts/assets/'" >> /home/lvl4/.bashrc &&\
     echo "alias help='clear && cat /home/lvl4/help.txt'" >> /home/lvl4/.bashrc &&\
     echo "python3 /clean.py lvl4 && touch /home/lvl4/rahasyam && rm /home/lvl4/rahasyam &&  clear && cat /home/lvl4/.config/scripts/assets/intro.txt" >> /home/lvl4/.bashrc 
-    chmod +x /home/lvl5/task.sh &&\
+
+#====================================================================
+
+# level 5
+
+RUN useradd -rm -d /home/lvl5 -s /bin/bash -g root lvl5 &&\
+    echo "lvl5:k4tTu_mynh4" | chpasswd
+
+COPY  ./lvl5/scripts /home/lvl5/.config/scripts
+
+COPY  ./story.py /home/lvl5/.config/scripts/story.py
+
+COPY  ./lvl5/help.txt /home/lvl5/
+
+COPY ./lvl5/task.sh /home/lvl5/task.sh
+
+COPY ./lvl5/required.txt /lvl5/required.txt
+
+RUN chmod +x /home/lvl5/task.sh &&\
     /home/lvl5/task.sh &&\
     rm /home/lvl5/task.sh &&\
     chown lvl5 -R  /home/lvl5 &&\
@@ -131,68 +188,10 @@ RUN service ssh start &&\
 
 #====================================================================
 
-# level 2
-
-
-COPY  ./lvl2/scripts /home/lvl2/.config/scripts
-
-COPY  ./story.py /home/lvl2/.config/scripts/story.py
-
-COPY  ./lvl2/help.txt /home/lvl2/
-
-COPY ./lvl2/task.sh /home/lvl2/task.sh
-
-COPY ./lvl2/required.txt /lvl2/required.txt
-
-#====================================================================
-
-# level 3
-
-
-COPY  ./lvl3/scripts /home/lvl3/.config/scripts
-
-COPY  ./story.py /home/lvl3/.config/scripts/story.py
-
-COPY  ./lvl3/help.txt /home/lvl3/
-
-COPY ./lvl3/file_gen.py /home/lvl3/file_gen.py
-
-COPY ./lvl3/required.txt /lvl3/required.txt
-
-#====================================================================
-
-# level 4
-
-
-COPY  ./lvl4/scripts /home/lvl4/.config/scripts
-
-COPY  ./story.py /home/lvl4/.config/scripts/story.py
-
-COPY  ./lvl4/help.txt /home/lvl4/
-
-COPY ./lvl4/task.sh /home/lvl4/task.sh
-
-COPY ./lvl4/required.txt /lvl4/required.txt
-
-
-#====================================================================
-
-# level 5
-
-
-COPY  ./lvl5/scripts /home/lvl5/.config/scripts
-
-COPY  ./story.py /home/lvl5/.config/scripts/story.py
-
-COPY  ./lvl5/help.txt /home/lvl5/
-
-COPY ./lvl5/task.sh /home/lvl5/task.sh
-
-COPY ./lvl5/required.txt /lvl5/required.txt
-
-#====================================================================
-
 # level 6
+
+RUN useradd -rm -d /home/lvl6 -s /bin/bash -g root lvl6 &&\
+    echo "lvl6:v3gam_0od1Kk0" | chpasswd
 
 COPY  ./lvl6/scripts /home/lvl6/.config/scripts
 
