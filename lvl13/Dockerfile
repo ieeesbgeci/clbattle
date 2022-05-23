@@ -16,6 +16,8 @@ COPY  ./help.txt /home/$LVL/
 
 COPY ./instruction.txt /hom/$LVL/
 
+COPY ./required.txt /$LVL/required.txt
+
 RUN chmod -R 555 /home/$LVL/.config/scripts &&\
     chmod -R 555 /home/$LVL/help.txt &&\
     chmod -R 555 /home/$LVL/instruction.txt &&\
@@ -23,7 +25,7 @@ RUN chmod -R 555 /home/$LVL/.config/scripts &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\
-    echo "clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
+    echo "python3 /clean.py && clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
 
 EXPOSE 22
 

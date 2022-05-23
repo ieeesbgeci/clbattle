@@ -18,6 +18,8 @@ COPY ./.lock.txt /home/$LVL/.lock.txt
 
 COPY  ./task.c /home/$LVL/task.c
 
+COPY ./required.txt /$LVL/required.txt
+
 RUN service ssh start &&\
     chmod -R 555 /home/$LVL/.config/scripts &&\
     chmod -R 555 /home/$LVL/help.txt &&\
@@ -25,7 +27,7 @@ RUN service ssh start &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\
-    echo "clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc &&\
+    echo "python3 /clean.py && clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc &&\
     gcc /home/$LVL/task.c -O3 -Wno-unused-result -o /home/$LVL/lever &&\
     chown lvl6 /home/$LVL/lever &&\
     echo "chmod 444 /home/$LVL/lever" >> /home/$LVL/.bashrc &&\

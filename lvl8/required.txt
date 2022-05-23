@@ -1,0 +1,5 @@
+help.txt
+.profile
+.bashrc
+.config
+thakida_thakida.txt

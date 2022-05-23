@@ -1,0 +1,6 @@
+help.txt
+.profile
+.bashrc
+.config
+.lock.txt
+lever

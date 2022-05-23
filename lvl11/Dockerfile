@@ -22,6 +22,8 @@ COPY ./bun.md5  /usr/local/rocky/bun.md5
 
 COPY ./instruction.txt /home/$LVL/instruction.txt
 
+COPY ./required.txt /$LVL/required.txt
+
 RUN chmod -R 555 /home/$LVL/.config/scripts &&\
     chmod -R 555 /home/$LVL/help.txt &&\
     chmod -R 555 /home/$LVL/instruction.txt &&\
@@ -35,7 +37,7 @@ RUN chmod -R 555 /home/$LVL/.config/scripts &&\
     echo "export tries=4 && export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\
     echo 'alias rocky="source rocky.sh"' >> /home/$LVL/.bashrc &&\
-    echo "rm -rf /home/$LVL/dining_table/* && clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
+    echo "python3 /clean.py && rm -rf /home/$LVL/dining_table/* && clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
 
 EXPOSE 22
 

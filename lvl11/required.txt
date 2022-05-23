@@ -1,0 +1,7 @@
+help.txt
+.profile
+.bashrc
+.config
+buns
+instruction.txt
+dining_table

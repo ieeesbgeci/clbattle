@@ -1,0 +1,6 @@
+help.txt
+.profile
+.bashrc
+.config
+ak_private.pem
+ak47.locked

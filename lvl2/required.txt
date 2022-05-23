@@ -1,0 +1,5 @@
+help.txt
+.profile
+.bashrc
+.config
+doors

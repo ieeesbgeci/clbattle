@@ -1,4 +1,4 @@
-Ivide onnum illa ellam kazhinju : )
+Read instruction.txt  : )
 
 enter [start] to view the task again : ) .
 enter [start fast] to skip text delay : ) .

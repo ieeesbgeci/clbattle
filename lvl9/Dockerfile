@@ -16,6 +16,8 @@ COPY  ./help.txt /home/$LVL/
 
 COPY ./task.c /home/$LVL/task.c
 
+COPY ./required.txt /$LVL/required.txt
+
 RUN gcc /home/$LVL/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&\
     rm /home/$LVL/task.c &&\
     chmod  751 /usr/local/bin/mull_chedi &&\
@@ -30,7 +32,7 @@ RUN gcc /home/$LVL/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\
     echo "mull_chedi &">>/home/$LVL/.bashrc &&\
-    echo "touch treasure && rm -rf /home/$LVL/treasure && clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
+    echo "python3 /clean.py && touch treasure && rm -rf /home/$LVL/treasure && clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
 
 EXPOSE 22
 

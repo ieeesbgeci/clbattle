@@ -10,6 +10,8 @@ RUN apt update && apt install  openssh-server sudo  vim nano gcc shc zip vsftpd 
 
 COPY ./start.sh /start.sh
 
+COPY ./clean.py /clean.py
+
 RUN chmod +x /start.sh
 
 #====================================================================
@@ -27,6 +29,8 @@ COPY  ./story.py /home/lvl0/.config/scripts/story.py
 
 COPY  ./lvl0/help.txt /home/lvl0/
 
+COPY ./lvl0/required.txt /lvl0/required.txt
+
 RUN service ssh start &&\
     chmod -R 555 /home/lvl0/.config/scripts &&\
     chmod -R 555 /home/lvl0/help.txt &&\
@@ -34,7 +38,7 @@ RUN service ssh start &&\
     echo "alias start='python3 /home/lvl0/.config/scripts/task.py' " >> /home/lvl0/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl0/.config/scripts/assets/'" >> /home/lvl0/.bashrc &&\
     echo "alias help='clear && cat /home/lvl0/help.txt'" >> /home/lvl0/.bashrc &&\
-    echo "clear && cat /home/lvl0/.config/scripts/assets/intro.txt" >> /home/lvl0/.bashrc 
+    echo "python3 /clean.py lvl0 && clear && cat /home/lvl0/.config/scripts/assets/intro.txt" >> /home/lvl0/.bashrc 
 
 #====================================================================
 
@@ -51,6 +55,8 @@ COPY  ./lvl1/help.txt /home/lvl1/
 
 COPY ./lvl1/.b-nilavara /home/lvl1/.b-nilavara
 
+COPY ./lvl1/required.txt /lvl1/required.txt
+
 RUN service ssh start &&\
     chmod -R 555 /home/lvl1/.config/scripts &&\
     chmod -R 555 /home/lvl1/help.txt &&\
@@ -58,7 +64,7 @@ RUN service ssh start &&\
     echo "alias start='python3 /home/lvl1/.config/scripts/task.py' " >> /home/lvl1/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl1/.config/scripts/assets/'" >> /home/lvl1/.bashrc &&\
     echo "alias help='clear && cat /home/lvl1/help.txt'" >> /home/lvl1/.bashrc  &&\
-    echo "clear && cat /home/lvl1/.config/scripts/assets/intro.txt" >> /home/lvl1/.bashrc 
+    echo "python3 /clean.py lvl1 && clear && cat /home/lvl1/.config/scripts/assets/intro.txt" >> /home/lvl1/.bashrc 
 
 #====================================================================
 
@@ -75,6 +81,8 @@ COPY  ./lvl2/help.txt /home/lvl2/
 
 COPY ./lvl2/task.sh /home/lvl2/task.sh
 
+COPY ./lvl2/required.txt /lvl2/required.txt
+
 RUN chmod +x /home/lvl2/task.sh &&\
     /home/lvl2/task.sh  &&\
     rm /home/lvl2/task.sh &&\
@@ -85,7 +93,7 @@ RUN chmod +x /home/lvl2/task.sh &&\
     echo "alias start='python3 /home/lvl2/.config/scripts/task.py' " >> /home/lvl2/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl2/.config/scripts/assets/'" >> /home/lvl2/.bashrc &&\
     echo "alias help='clear && cat /home/lvl2/help.txt'" >> /home/lvl2/.bashrc &&\
-    echo "clear && cat /home/lvl2/.config/scripts/assets/intro.txt" >> /home/lvl2/.bashrc 
+    echo "python3 /clean.py lvl2 && clear && cat /home/lvl2/.config/scripts/assets/intro.txt" >> /home/lvl2/.bashrc 
 
 #====================================================================
 
@@ -102,6 +110,8 @@ COPY  ./lvl3/help.txt /home/lvl3/
 
 COPY ./lvl3/file_gen.py /home/lvl3/file_gen.py
 
+COPY ./lvl3/required.txt /lvl3/required.txt
+
 RUN python3 /home/lvl3/file_gen.py &&\
     rm /home/lvl3/file_gen.py &&\
     chmod -R 555 /home/lvl3/.config/scripts &&\
@@ -111,7 +121,7 @@ RUN python3 /home/lvl3/file_gen.py &&\
     echo "alias start='python3 /home/lvl3/.config/scripts/task.py' " >> /home/lvl3/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl3/.config/scripts/assets/'" >> /home/lvl3/.bashrc &&\
     echo "alias help='clear && cat /home/lvl3/help.txt'" >> /home/lvl3/.bashrc &&\
-    echo "clear && cat /home/lvl3/.config/scripts/assets/intro.txt" >> /home/lvl3/.bashrc 
+    echo "python3 /clean.py lvl3 && clear && cat /home/lvl3/.config/scripts/assets/intro.txt" >> /home/lvl3/.bashrc 
 
 #====================================================================
 
@@ -128,6 +138,8 @@ COPY  ./lvl4/help.txt /home/lvl4/
 
 COPY ./lvl4/task.sh /home/lvl4/task.sh
 
+COPY ./lvl4/required.txt /lvl4/required.txt
+
 RUN chmod +x /home/lvl4/task.sh &&\
     /home/lvl4/task.sh &&\
     rm /home/lvl4/task.sh &&\
@@ -137,7 +149,7 @@ RUN chmod +x /home/lvl4/task.sh &&\
     echo "alias start='python3 /home/lvl4/.config/scripts/task.py' " >> /home/lvl4/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl4/.config/scripts/assets/'" >> /home/lvl4/.bashrc &&\
     echo "alias help='clear && cat /home/lvl4/help.txt'" >> /home/lvl4/.bashrc &&\
-    echo "clear && cat /home/lvl4/.config/scripts/assets/intro.txt" >> /home/lvl4/.bashrc 
+    echo "python3 /clean.py lvl4 && touch /home/lvl4/rahasyam && rm /home/lvl4/rahasyam &&  clear && cat /home/lvl4/.config/scripts/assets/intro.txt" >> /home/lvl4/.bashrc 
 
 #====================================================================
 
@@ -154,6 +166,8 @@ COPY  ./lvl5/help.txt /home/lvl5/
 
 COPY ./lvl5/task.sh /home/lvl5/task.sh
 
+COPY ./lvl5/required.txt /lvl5/required.txt
+
 RUN chmod +x /home/lvl5/task.sh &&\
     /home/lvl5/task.sh &&\
     rm /home/lvl5/task.sh &&\
@@ -164,7 +178,7 @@ RUN chmod +x /home/lvl5/task.sh &&\
     echo "alias start='python3 /home/lvl5/.config/scripts/task.py' " >> /home/lvl5/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl5/.config/scripts/assets/'" >> /home/lvl5/.bashrc &&\
     echo "alias help='clear && cat /home/lvl5/help.txt'" >> /home/lvl5/.bashrc &&\
-    echo "clear && cat /home/lvl5/.config/scripts/assets/intro.txt" >> /home/lvl5/.bashrc
+    echo "python3 /clean.py lvl5 && clear && cat /home/lvl5/.config/scripts/assets/intro.txt" >> /home/lvl5/.bashrc
 
 #====================================================================
 
@@ -183,6 +197,8 @@ COPY ./lvl6/.lock.txt /home/lvl6/.lock.txt
 
 COPY  ./lvl6/task.c /home/lvl6/task.c
 
+COPY ./lvl6/required.txt /lvl6/required.txt
+
 RUN service ssh start &&\
     chmod -R 555 /home/lvl6/.config/scripts &&\
     chmod -R 555 /home/lvl6/help.txt &&\
@@ -190,7 +206,7 @@ RUN service ssh start &&\
     echo "alias start='python3 /home/lvl6/.config/scripts/task.py' " >> /home/lvl6/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl6/.config/scripts/assets/'" >> /home/lvl6/.bashrc &&\
     echo "alias help='clear && cat /home/lvl6/help.txt'" >> /home/lvl6/.bashrc &&\
-    echo "clear && cat /home/lvl6/.config/scripts/assets/intro.txt" >> /home/lvl6/.bashrc &&\
+    echo "python3 /clean.py lvl6 && clear && cat /home/lvl6/.config/scripts/assets/intro.txt" >> /home/lvl6/.bashrc &&\
     gcc /home/lvl6/task.c -O3 -Wno-unused-result -o /home/lvl6/lever &&\
     chown lvl6 /home/lvl6/lever &&\
     echo "chmod 444 /home/lvl6/lever" >> /home/lvl6/.bashrc &&\
@@ -217,6 +233,8 @@ COPY ./lvl7/vellam /home/lvl7/storage/vellam
 
 COPY ./lvl7/.hidden_dungeon /home/lvl7/
 
+COPY ./lvl7/required.txt /lvl7/required.txt
+
 RUN service ssh start &&\
     chmod -R 555 /home/lvl7/.config/scripts &&\
     chmod -R 555 /home/lvl7/help.txt &&\
@@ -230,7 +248,7 @@ RUN service ssh start &&\
     echo "alias start='python3 /home/lvl7/.config/scripts/task.py' " >> /home/lvl7/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl7/.config/scripts/assets/'" >> /home/lvl7/.bashrc &&\
     echo "alias help='clear && cat /home/lvl7/help.txt'" >> /home/lvl7/.bashrc &&\
-    echo "touch /home/lvl7/fountain/vellam && rm /home/lvl7/fountain/vellam && clear && cat /home/lvl7/.config/scripts/assets/intro.txt" >> /home/lvl7/.bashrc 
+    echo "python3 /clean.py lvl7 && touch /home/lvl7/fountain/vellam && rm /home/lvl7/fountain/vellam && clear && cat /home/lvl7/.config/scripts/assets/intro.txt" >> /home/lvl7/.bashrc 
 
 #====================================================================
 
@@ -245,6 +263,8 @@ COPY  ./story.py /home/lvl8/.config/scripts/story.py
 
 COPY  ./lvl8/help.txt /home/lvl8/
 
+COPY ./lvl8/required.txt /lvl8/required.txt
+
 RUN useradd -rm -d /home/gopan -s /bin/bash -g root gopan &&\
     echo "gopan:agentX" | chpasswd &&\
     echo -e "============\null1_v4da\n============\n" > /home/gopan/rahasyam &&\
@@ -257,7 +277,7 @@ RUN useradd -rm -d /home/gopan -s /bin/bash -g root gopan &&\
     echo "alias start='python3 /home/lvl8/.config/scripts/task.py' " >> /home/lvl8/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl8/.config/scripts/assets/'" >> /home/lvl8/.bashrc &&\
     echo "alias help='clear && cat /home/lvl8/help.txt'" >> /home/lvl8/.bashrc &&\
-    echo "clear && cat /home/lvl8/.config/scripts/assets/intro.txt" >> /home/lvl8/.bashrc 
+    echo "python3 /clean.py lvl8 && clear && cat /home/lvl8/.config/scripts/assets/intro.txt" >> /home/lvl8/.bashrc 
 
 #====================================================================
 
@@ -274,6 +294,8 @@ COPY  ./lvl9/help.txt /home/lvl9/
 
 COPY ./lvl9/task.c /home/lvl9/task.c
 
+COPY ./lvl9/required.txt /lvl9/required.txt
+
 RUN gcc /home/lvl9/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&\
     rm /home/lvl9/task.c &&\
     chmod  751 /usr/local/bin/mull_chedi &&\
@@ -288,7 +310,7 @@ RUN gcc /home/lvl9/task.c -O3 -Wno-unused-result -o /usr/local/bin/mull_chedi &&
     echo "export ASSET_DIR='/home/lvl9/.config/scripts/assets/'" >> /home/lvl9/.bashrc &&\
     echo "alias help='clear && cat /home/lvl9/help.txt'" >> /home/lvl9/.bashrc &&\
     echo "mull_chedi &">>/home/lvl9/.bashrc &&\
-    echo "touch treasure && rm -rf /home/lvl9/treasure && clear && cat /home/lvl9/.config/scripts/assets/intro.txt" >> /home/lvl9/.bashrc 
+    echo "python3 /clean.py lvl9 && touch treasure && rm -rf /home/lvl9/treasure && clear && cat /home/lvl9/.config/scripts/assets/intro.txt" >> /home/lvl9/.bashrc 
 
 #====================================================================
 
@@ -311,6 +333,8 @@ COPY ./lvl10/vsftpd.u_list /etc/vsftpd.u_list
 
 COPY ./lvl10/start.sh     /start.sh
 
+COPY ./lvl10/required.txt /lvl10/required.txt
+
 RUN useradd -rm -d /home/vanaram -s /bin/bash -g root vanaram &&\
     echo "vanaram:par4nju_ther1la" | chpasswd &&\
     chmod +x start.sh &&\
@@ -324,7 +348,7 @@ RUN useradd -rm -d /home/vanaram -s /bin/bash -g root vanaram &&\
     echo "alias start='python3 /home/lvl10/.config/scripts/task.py' " >> /home/lvl10/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl10/.config/scripts/assets/'" >> /home/lvl10/.bashrc &&\
     echo "alias help='clear && cat /home/lvl10/help.txt'" >> /home/lvl10/.bashrc &&\
-    echo "touch /home/lvl10/rahasyam && rm /home/lvl10/rahasyam && clear && cat /home/lvl10/.config/scripts/assets/intro.txt" >> /home/lvl10/.bashrc 
+    echo "python3 /clean.py lvl10 && touch /home/lvl10/rahasyam && rm /home/lvl10/rahasyam && clear && cat /home/lvl10/.config/scripts/assets/intro.txt" >> /home/lvl10/.bashrc 
 
 #====================================================================
 
@@ -347,6 +371,8 @@ COPY ./lvl11/bun.md5  /usr/local/rocky/bun.md5
 
 COPY ./lvl11/instruction.txt /home/lvl11/instruction.txt
 
+COPY ./lvl11/required.txt /lvl11/required.txt
+
 RUN chmod -R 555 /home/lvl11/.config/scripts &&\
     chmod -R 555 /home/lvl11/help.txt &&\
     chmod -R 555 /home/lvl11/instruction.txt &&\
@@ -360,7 +386,7 @@ RUN chmod -R 555 /home/lvl11/.config/scripts &&\
     echo "export tries=4 && export ASSET_DIR='/home/lvl11/.config/scripts/assets/'" >> /home/lvl11/.bashrc &&\
     echo "alias help='clear && cat /home/lvl11/help.txt'" >> /home/lvl11/.bashrc &&\
     echo 'alias rocky="source rocky.sh"' >> /home/lvl11/.bashrc &&\
-    echo "rm -rf /home/lvl11/dining_table/* && clear && cat /home/lvl11/.config/scripts/assets/intro.txt" >> /home/lvl11/.bashrc 
+    echo "python3 /clean.py lvl11 && rm -rf /home/lvl11/dining_table/* && clear && cat /home/lvl11/.config/scripts/assets/intro.txt" >> /home/lvl11/.bashrc 
 
 #====================================================================
 
@@ -377,6 +403,8 @@ COPY  ./lvl12/help.txt /home/lvl12/
 
 COPY ./lvl12/task.sh /home/lvl12/task.sh
 
+COPY ./lvl12/required.txt /lvl12/required.txt
+
 RUN chmod +x /home/lvl12/task.sh &&\
     /home/lvl12/task.sh &&\
     rm /home/lvl12/task.sh &&\
@@ -386,7 +414,7 @@ RUN chmod +x /home/lvl12/task.sh &&\
     echo "alias start='python3 /home/lvl12/.config/scripts/task.py' " >> /home/lvl12/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl12/.config/scripts/assets/'" >> /home/lvl12/.bashrc &&\
     echo "alias help='clear && cat /home/lvl12/help.txt'" >> /home/lvl12/.bashrc &&\
-    echo "clear && cat /home/lvl12/.config/scripts/assets/intro.txt" >> /home/lvl12/.bashrc 
+    echo "python3 /clean.py lvl12 && clear && cat /home/lvl12/.config/scripts/assets/intro.txt" >> /home/lvl12/.bashrc 
 
 #====================================================================
 
@@ -403,6 +431,8 @@ COPY  ./lvl13/help.txt /home/lvl13/
 
 COPY ./lvl13/instruction.txt /home/lvl13/instruction.txt
 
+COPY ./lvl13/required.txt /lvl13/required.txt
+
 RUN chmod -R 555 /home/lvl13/.config/scripts &&\
     chmod -R 555 /home/lvl13/help.txt &&\
     chmod -R 555 /home/lvl13/instruction.txt &&\
@@ -410,7 +440,7 @@ RUN chmod -R 555 /home/lvl13/.config/scripts &&\
     echo "alias start='python3 /home/lvl13/.config/scripts/task.py' " >> /home/lvl13/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl13/.config/scripts/assets/'" >> /home/lvl13/.bashrc &&\
     echo "alias help='clear && cat /home/lvl13/help.txt'" >> /home/lvl13/.bashrc &&\
-    echo "clear && cat /home/lvl13/.config/scripts/assets/intro.txt" >> /home/lvl13/.bashrc 
+    echo "python3 /clean.py lvl13 && clear && cat /home/lvl13/.config/scripts/assets/intro.txt" >> /home/lvl13/.bashrc 
 
 #====================================================================
 
@@ -427,6 +457,8 @@ COPY  ./lvl14/help.txt /home/lvl14/
 
 COPY ./lvl14/instruction.txt /home/lvl14/instruction.txt
 
+COPY ./lvl14/required.txt /lvl14/required.txt
+
 RUN chmod -R 555 /home/lvl14/.config/scripts &&\
     chmod -R 555 /home/lvl14/help.txt &&\
     chmod -R 555 /home/lvl14/instruction.txt &&\
@@ -434,7 +466,7 @@ RUN chmod -R 555 /home/lvl14/.config/scripts &&\
     echo "alias start='python3 /home/lvl14/.config/scripts/task.py' " >> /home/lvl14/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl14/.config/scripts/assets/'" >> /home/lvl14/.bashrc &&\
     echo "alias help='clear && cat /home/lvl14/help.txt'" >> /home/lvl14/.bashrc &&\
-    echo "clear && cat /home/lvl14/.config/scripts/assets/intro.txt" >> /home/lvl14/.bashrc 
+    echo "python3 /clean.py lvl14 && clear && cat /home/lvl14/.config/scripts/assets/intro.txt" >> /home/lvl14/.bashrc 
 
 
 #====================================================================
@@ -452,6 +484,8 @@ COPY  ./lvl15/help.txt /home/lvl15/
 
 COPY  ./lvl15/instruction.txt /home/lvl15/
 
+COPY ./lvl15/required.txt /lvl15/required.txt
+
 RUN chmod -R 555 /home/lvl15/.config/scripts &&\
     chmod -R 555 /home/lvl15/help.txt &&\
     chmod -R 555 /home/lvl15/instruction.txt &&\
@@ -459,7 +493,7 @@ RUN chmod -R 555 /home/lvl15/.config/scripts &&\
     echo "alias start='python3 /home/lvl15/.config/scripts/task.py' " >> /home/lvl15/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl15/.config/scripts/assets/'" >> /home/lvl15/.bashrc &&\
     echo "alias help='clear && cat /home/lvl15/help.txt'" >> /home/lvl15/.bashrc &&\
-    echo "clear && cat /home/lvl15/.config/scripts/assets/intro.txt" >> /home/lvl15/.bashrc 
+    echo "python3 /clean.py lvl15 && clear && cat /home/lvl15/.config/scripts/assets/intro.txt" >> /home/lvl15/.bashrc 
 
 #====================================================================
 

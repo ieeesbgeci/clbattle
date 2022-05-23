@@ -22,6 +22,8 @@ COPY ./vellam /home/lvl7/storage/vellam
 
 COPY ./hidden_dungeon /home/lvl7/
 
+COPY ./required.txt /$LVL/required.txt
+
 RUN service ssh start &&\
     chmod -R 555 /home/$LVL/.config/scripts &&\
     chmod -R 555 /home/$LVL/help.txt &&\
@@ -35,7 +37,7 @@ RUN service ssh start &&\
     echo "alias start='python3 /home/$LVL/.config/scripts/task.py' " >> /home/$LVL/.bashrc &&\
     echo "export ASSET_DIR='/home/$LVL/.config/scripts/assets/'" >> /home/$LVL/.bashrc &&\
     echo "alias help='clear && cat /home/$LVL/help.txt'" >> /home/$LVL/.bashrc &&\
-    echo "touch /home/lvl7/fountain/vellam && rm /home/lvl7/fountain/vellam && clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
+    echo "python3 /clean.py && touch /home/lvl7/fountain/vellam && rm /home/lvl7/fountain/vellam && clear && cat /home/$LVL/.config/scripts/assets/intro.txt" >> /home/$LVL/.bashrc 
 
 EXPOSE 22
 
