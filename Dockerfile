@@ -48,6 +48,21 @@ RUN service ssh start &&\
 RUN useradd -rm -d /home/lvl1 -s /bin/bash -g root lvl1 &&\
     echo "lvl1:vapachis_legacy" | chpasswd
 
+RUN useradd -rm -d /home/lvl2 -s /bin/bash -g root lvl2 &&\
+    echo "lvl2:kunj1_kuRuV1" | chpasswd
+
+RUN useradd -rm -d /home/lvl3 -s /bin/bash -g root lvl3 &&\
+    echo "lvl3:k4rukaVay4l_kuruv1" | chpasswd
+
+RUN useradd -rm -d /home/lvl4 -s /bin/bash -g root lvl4 &&\
+echo "lvl4:ambala_pr4vu" | chpasswd
+
+RUN useradd -rm -d /home/lvl5 -s /bin/bash -g root lvl5 &&\
+    echo "lvl5:k4tTu_mynh4" | chpasswd
+
+RUN useradd -rm -d /home/lvl6 -s /bin/bash -g root lvl6 &&\
+    echo "lvl6:v3gam_0od1Kk0" | chpasswd
+    
 COPY  ./lvl1/scripts /home/lvl1/.config/scripts
 
 COPY  ./story.py /home/lvl1/.config/scripts/story.py
@@ -57,7 +72,6 @@ COPY  ./lvl1/help.txt /home/lvl1/
 COPY ./lvl1/.b-nilavara /home/lvl1/.b-nilavara
 
 COPY ./lvl1/required.txt /lvl1/required.txt
-
 
 COPY  ./lvl2/scripts /home/lvl2/.config/scripts
 
@@ -79,7 +93,6 @@ COPY ./lvl3/file_gen.py /home/lvl3/file_gen.py
 
 COPY ./lvl3/required.txt /lvl3/required.txt
 
-
 COPY  ./lvl4/scripts /home/lvl4/.config/scripts
 
 COPY  ./story.py /home/lvl4/.config/scripts/story.py
@@ -99,22 +112,6 @@ COPY  ./lvl5/help.txt /home/lvl5/
 COPY ./lvl5/task.sh /home/lvl5/task.sh
 
 COPY ./lvl5/required.txt /lvl5/required.txt
-
-
-RUN useradd -rm -d /home/lvl2 -s /bin/bash -g root lvl2 &&\
-    echo "lvl2:kunj1_kuRuV1" | chpasswd
-
-RUN useradd -rm -d /home/lvl3 -s /bin/bash -g root lvl3 &&\
-    echo "lvl3:k4rukaVay4l_kuruv1" | chpasswd
-
-RUN useradd -rm -d /home/lvl4 -s /bin/bash -g root lvl4 &&\
-echo "lvl4:ambala_pr4vu" | chpasswd
-
-RUN useradd -rm -d /home/lvl5 -s /bin/bash -g root lvl5 &&\
-    echo "lvl5:k4tTu_mynh4" | chpasswd
-
-RUN useradd -rm -d /home/lvl6 -s /bin/bash -g root lvl6 &&\
-    echo "lvl6:v3gam_0od1Kk0" | chpasswd
 
 RUN echo "root:sCn_v4zha" | chpasswd &&\
     service ssh start &&\
@@ -404,8 +401,8 @@ RUN mkdir /home/lvl11/dining_table &&\
     chmod -R 505 /home/lvl11/help.txt &&\
     chmod -R 505 /home/lvl11/instruction.txt &&\ 
     chmod -R 777 /home/lvl11/dining_table &&\
-    chmod  705 /usr/local/bin/rocky.sh &&\
-    chmod  404 /usr/local/rocky/bun.md5 &&\
+    # chmod  705 /usr/local/bin/rocky.sh &&\
+    #chmod  404 /usr/local/rocky/bun.md5 &&\
     chmod 707 -R /home/lvl11/dining_table &&\
     chmod 707 -R /home/lvl11/buns &&\
     service ssh start &&\
