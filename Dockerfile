@@ -116,7 +116,8 @@ RUN useradd -rm -d /home/lvl5 -s /bin/bash -g root lvl5 &&\
 RUN useradd -rm -d /home/lvl6 -s /bin/bash -g root lvl6 &&\
     echo "lvl6:v3gam_0od1Kk0" | chpasswd
 
-RUN service ssh start &&\
+RUN echo "root:arvin_j4848" | chpasswd &&\
+    service ssh start &&\
     chown lvl1 -R  /home/lvl1 &&\
     chmod -R 505 /home/lvl1/.config/scripts &&\
     chmod -R 505 /home/lvl1/help.txt &&\
@@ -288,6 +289,8 @@ RUN useradd -rm -d /home/gopan -s /bin/bash -g root gopan &&\
     echo -e "============\null1_v4da\n============\n" > /home/gopan/rahasyam &&\
     echo -e "thaka thaka..thalayude_vilayattu..\n [agentX]\n" > /home/lvl8/.thaka_thaka.txt &&\
     chown lvl8 -R  /home/lvl8 &&\
+    chown -R gopan /home/gopan/rahasyam &&\
+    chmod -R 505 /home/gopan/rahasyam &&\
     chmod -R 505 /home/lvl8/.config/scripts &&\
     chmod -R 505 /home/lvl8/help.txt &&\
     chmod -R 505 /home/gopan/rahasyam &&\
