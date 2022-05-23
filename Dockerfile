@@ -14,16 +14,6 @@ RUN chmod +x /start.sh
 
 #====================================================================
 
-#build and run api
-
-COPY ./clbattle_api /clbattle_api
-
-Run 
-
-
-
-#====================================================================
-
 # level 0
 
 RUN useradd -rm -d /home/lvl0 -s /bin/bash -g root lvl0 &&\
