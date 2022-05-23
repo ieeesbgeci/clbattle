@@ -1,8 +1,8 @@
 Send Post request using curl
 ===========================================
 Request type : Post
-ip : 
-port : 
+ip : 54.234.174.49
+port : 8080
 endpoint: http://[ip]:[port]/lvl14/bomb
 
 Content type : Json
