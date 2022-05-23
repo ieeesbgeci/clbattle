@@ -2,6 +2,6 @@ Send Get request using curl
 Air Safety Permission
 ======================
 Request type : Get 
-ip : 54.234.174.49
+ip : 127.0.0.1
 port : 8080
 endpoint: http://[ip]:[port]/lvl13/airsafe

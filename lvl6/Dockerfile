@@ -5,7 +5,7 @@ LABEL "author"="v4zha"
 
 ARG LVL=lvl6
 
-RUN apt update && apt install  openssh-server sudo vim nano gcc -y
+RUN apt update && apt install  openssh-server sudo vim nano gcc man -y
 
 RUN useradd -rm -d /home/$LVL -s /bin/bash -g root $LVL &&\
     echo "$LVL:v3gam_0od1Kk0" | chpasswd

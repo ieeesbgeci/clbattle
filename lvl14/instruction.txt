@@ -1,7 +1,7 @@
 Send Post request using curl
 ===========================================
 Request type : Post
-ip : 54.234.174.49
+ip : 127.0.0.1
 port : 8080
 endpoint: http://[ip]:[port]/lvl14/bomb
 

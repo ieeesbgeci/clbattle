@@ -1,16 +1,21 @@
 use actix_web::{web,get, post, App, HttpServer, HttpResponse, Responder};
 use serde::Deserialize;
+use std::env;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
+    let port = env::var("PORT").expect("Error parsing Port Var");
+    let host = env::var("HOST").expect("Error parsing HOST Var");
+    let ip_port = format!("{}:{}", host, port);
+    println!("server running on : {}", ip_port);
     HttpServer::new(|| {
         App::new()
             .service(airsafe)
             .service(rocky_bomb)
     })
-    .bind(("127.0.0.1", 8080))?
+    .bind(ip_port)?
     .run()
     .await
 }

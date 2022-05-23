@@ -5,7 +5,7 @@ LABEL "author"="v4zha"
 
 ARG LVL=lvl7
 
-RUN apt update && apt install  openssh-server sudo vim nano shc gcc -y
+RUN apt update && apt install  openssh-server sudo vim nano shc gcc man -y
 
 RUN useradd -rm -d /home/$LVL -s /bin/bash -g root $LVL &&\
     echo "$LVL:p4rippu_v4da" | chpasswd
