@@ -240,7 +240,7 @@ COPY ./lvl7/vellam.md5  /home/lvl7/.config/scripts/fountain/vellam.md5
 
 COPY ./lvl7/vellam /home/lvl7/storage/vellam
 
-COPY ./lvl7/.hidden_dungeon /home/lvl7/
+COPY ./lvl7/.hidden_dungeon /home/lvl7/.hidden_dungeon
 
 COPY ./lvl7/required.txt /lvl7/required.txt
 
