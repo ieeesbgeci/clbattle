@@ -58,6 +58,49 @@ COPY ./lvl1/.b-nilavara /home/lvl1/.b-nilavara
 
 COPY ./lvl1/required.txt /lvl1/required.txt
 
+
+COPY  ./lvl2/scripts /home/lvl2/.config/scripts
+
+COPY  ./story.py /home/lvl2/.config/scripts/story.py
+
+COPY  ./lvl2/help.txt /home/lvl2/
+
+COPY ./lvl2/task.sh /home/lvl2/task.sh
+
+COPY ./lvl2/required.txt /lvl2/required.txt
+
+COPY  ./lvl3/scripts /home/lvl3/.config/scripts
+
+COPY  ./story.py /home/lvl3/.config/scripts/story.py
+
+COPY  ./lvl3/help.txt /home/lvl3/
+
+COPY ./lvl3/file_gen.py /home/lvl3/file_gen.py
+
+COPY ./lvl3/required.txt /lvl3/required.txt
+
+
+COPY  ./lvl4/scripts /home/lvl4/.config/scripts
+
+COPY  ./story.py /home/lvl4/.config/scripts/story.py
+
+COPY  ./lvl4/help.txt /home/lvl4/
+
+COPY ./lvl4/task.sh /home/lvl4/task.sh
+
+COPY ./lvl4/required.txt /lvl4/required.txt
+
+COPY  ./lvl5/scripts /home/lvl5/.config/scripts
+
+COPY  ./story.py /home/lvl5/.config/scripts/story.py
+
+COPY  ./lvl5/help.txt /home/lvl5/
+
+COPY ./lvl5/task.sh /home/lvl5/task.sh
+
+COPY ./lvl5/required.txt /lvl5/required.txt
+
+
 RUN useradd -rm -d /home/lvl2 -s /bin/bash -g root lvl2 &&\
     echo "lvl2:kunj1_kuRuV1" | chpasswd
 
@@ -134,45 +177,18 @@ RUN service ssh start &&\
 # level 2
 
 
-COPY  ./lvl2/scripts /home/lvl2/.config/scripts
-
-COPY  ./story.py /home/lvl2/.config/scripts/story.py
-
-COPY  ./lvl2/help.txt /home/lvl2/
-
-COPY ./lvl2/task.sh /home/lvl2/task.sh
-
-COPY ./lvl2/required.txt /lvl2/required.txt
 
 #====================================================================
 
 # level 3
 
 
-COPY  ./lvl3/scripts /home/lvl3/.config/scripts
-
-COPY  ./story.py /home/lvl3/.config/scripts/story.py
-
-COPY  ./lvl3/help.txt /home/lvl3/
-
-COPY ./lvl3/file_gen.py /home/lvl3/file_gen.py
-
-COPY ./lvl3/required.txt /lvl3/required.txt
 
 #====================================================================
 
 # level 4
 
 
-COPY  ./lvl4/scripts /home/lvl4/.config/scripts
-
-COPY  ./story.py /home/lvl4/.config/scripts/story.py
-
-COPY  ./lvl4/help.txt /home/lvl4/
-
-COPY ./lvl4/task.sh /home/lvl4/task.sh
-
-COPY ./lvl4/required.txt /lvl4/required.txt
 
 
 #====================================================================
@@ -180,15 +196,6 @@ COPY ./lvl4/required.txt /lvl4/required.txt
 # level 5
 
 
-COPY  ./lvl5/scripts /home/lvl5/.config/scripts
-
-COPY  ./story.py /home/lvl5/.config/scripts/story.py
-
-COPY  ./lvl5/help.txt /home/lvl5/
-
-COPY ./lvl5/task.sh /home/lvl5/task.sh
-
-COPY ./lvl5/required.txt /lvl5/required.txt
 
 #====================================================================
 
