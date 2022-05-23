@@ -264,7 +264,7 @@ RUN service ssh start &&\
     echo "export ASSET_DIR='/home/lvl7/.config/scripts/assets/'" >> /home/lvl7/.bashrc &&\
     echo "alias help='clear && cat /home/lvl7/help.txt'" >> /home/lvl7/.bashrc &&\
     echo "alias fountain='/home/lvl7/.config/scripts/fountain.sh'" >>/home/lvl7/.bashrc &&\
-    echo "python3 /clean.py lvl7 && touch /home/lvl7/fountain/vellam && rm /home/lvl7/fountain/vellam && clear && cat /home/lvl7/.config/scripts/assets/intro.txt" >> /home/lvl7/.bashrc 
+    echo "python3 /clean.py lvl7 && touch /home/lvl7/fountain/vellam && rm /home/lvl7/fountain/vellam && touch /home/lvl7/.hidden_dungeon/.secret_pathway/rahasyam && rm /home/lvl7/.hidden_dungeon/.secret_pathway/rahasyam && clear && cat /home/lvl7/.config/scripts/assets/intro.txt" >> /home/lvl7/.bashrc 
 
 #====================================================================
 
