@@ -1,4 +1,5 @@
 cp commands may come in handy : ) .
+enter [fountain] when ready.
 
 enter [start] to view the task again : ) .
 enter [start fast] to skip text delay : ) .

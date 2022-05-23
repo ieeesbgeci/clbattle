@@ -6,3 +6,4 @@ storage
 fountain
 .bash_history
 .bash_logout
+.hidden_dungeon
