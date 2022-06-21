@@ -12,8 +12,6 @@ COPY ./start.sh /start.sh
 
 COPY ./clean.py /clean.py
 
-RUN chmod +x /start.sh
-
 RUN useradd -rm -d /home/lvl0 -s /bin/bash -g root lvl0 &&\
     echo "lvl0:clbattle" | chpasswd
 
@@ -27,7 +25,7 @@ RUN useradd -rm -d /home/lvl3 -s /bin/bash -g root lvl3 &&\
     echo "lvl3:k4rukaVay4l_kuruv1" | chpasswd
 
 RUN useradd -rm -d /home/lvl4 -s /bin/bash -g root lvl4 &&\
-echo "lvl4:ambala_pr4vu" | chpasswd
+    echo "lvl4:ambala_pr4vu" | chpasswd
 
 RUN useradd -rm -d /home/lvl5 -s /bin/bash -g root lvl5 &&\
     echo "lvl5:k4tTu_mynh4" | chpasswd
@@ -180,8 +178,6 @@ COPY ./lvl10/vsftpd.conf /etc/vsftpd.conf
 
 COPY ./lvl10/vsftpd.u_list /etc/vsftpd.u_list
 
-COPY ./lvl10/start.sh     /start.sh
-
 COPY ./lvl10/required.txt /lvl10/required.txt
 
 COPY  ./lvl11/scripts /home/lvl11/.config/scripts
@@ -240,8 +236,18 @@ COPY  ./lvl15/instruction.txt /home/lvl15/
 
 COPY ./lvl15/required.txt /lvl15/required.txt
 
-RUN echo "root:sCn_v4zha" | chpasswd &&\
+RUN chmod +x /start.sh &&\
+    echo "root:sCn_v4zha" | chpasswd &&\
     service ssh start &&\
+    service vsftpd start &&\
+    chown lvl0 -R  /home/lvl0  &&\
+    chmod -R 505 /home/lvl0/.config/scripts &&\
+    chmod -R 505 /home/lvl0/help.txt &&\
+    chmod -R 505 /home/lvl0/scrolls  &&\
+    echo "alias start='python3 /home/lvl0/.config/scripts/task.py' " >> /home/lvl0/.bashrc &&\
+    echo "export ASSET_DIR='/home/lvl0/.config/scripts/assets/'" >> /home/lvl0/.bashrc &&\
+    echo "alias help='clear && cat /home/lvl0/help.txt'" >> /home/lvl0/.bashrc &&\
+    echo "python3 /clean.py lvl0 && clear && cat /home/lvl0/.config/scripts/assets/intro.txt" >> /home/lvl0/.bashrc &&\
     chown lvl1 -R  /home/lvl1 &&\
     chmod -R 505 /home/lvl1/.config/scripts &&\
     chmod -R 505 /home/lvl1/help.txt &&\
@@ -308,13 +314,13 @@ RUN echo "root:sCn_v4zha" | chpasswd &&\
     chmod -R 505 /home/lvl7/.config/scripts &&\
     chmod -R 505 /home/lvl7/help.txt &&\
     mkdir /home/lvl7/fountain &&\
-   #    shc -f /usr/local/bin/fountain.sh -U -o /usr/local/bin/fountain &&\
+    #    shc -f /usr/local/bin/fountain.sh -U -o /usr/local/bin/fountain &&\
     #rm /usr/local/bin/fountain.* &&\
     #chmod  555 /usr/local/bin/fountain &&\
     #chmod  555 /usr/local/fountain/vellam.md5 &&\
     chown lvl7 -R  /home/lvl7 &&\
-  #  chown lvl7 -R /usr/local/bin/fountain &&\
-  #  chown lvl7 -R /usr/local/fountain &&\
+    #  chown lvl7 -R /usr/local/bin/fountain &&\
+    #  chown lvl7 -R /usr/local/fountain &&\
     chmod 777 /home/lvl7/.config/scripts/fountain.sh &&\
     chmod 777 /home/lvl7/.config/scripts/fountain/vellam.md5 &&\
     chmod 707 -R /home/lvl7/storage &&\
@@ -335,7 +341,6 @@ RUN echo "root:sCn_v4zha" | chpasswd &&\
     chmod -R 505 /home/lvl8/help.txt &&\
     chmod -R 505 /home/gopan/rahasyam &&\
     chmod -R 505 /home/lvl8/.thaka_thaka.txt &&\
-    service ssh start &&\
     echo "alias start='python3 /home/lvl8/.config/scripts/task.py' " >> /home/lvl8/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl8/.config/scripts/assets/'" >> /home/lvl8/.bashrc &&\
     echo "alias help='clear && cat /home/lvl8/help.txt'" >> /home/lvl8/.bashrc &&\
@@ -350,7 +355,6 @@ RUN echo "root:sCn_v4zha" | chpasswd &&\
     rm -rf /home/lvl9/treasure &&\
     chmod -R 505 /home/lvl9/.config/scripts &&\
     chmod -R 505 /home/lvl9/help.txt &&\
-    service ssh start &&\
     echo "alias start='python3 /home/lvl9/.config/scripts/task.py' " >> /home/lvl9/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl9/.config/scripts/assets/'" >> /home/lvl9/.bashrc &&\
     echo "alias help='clear && cat /home/lvl9/help.txt'" >> /home/lvl9/.bashrc &&\
@@ -359,15 +363,12 @@ RUN echo "root:sCn_v4zha" | chpasswd &&\
     echo "python3 /clean.py lvl9 && touch treasure && rm -rf /home/lvl9/treasure && clear && cat /home/lvl9/.config/scripts/assets/intro.txt" >> /home/lvl9/.bashrc &&\
     useradd -rm -d /home/vanaram -s /bin/bash -g root vanaram &&\
     echo "vanaram:par4nju_ther1la" | chpasswd &&\
-    chmod +x start.sh &&\
     mkdir /ftp &&\
     echo "AppY_f1zZ" > /ftp/rahasyam &&\
     chown lvl10 -R  /home/lvl10 &&\
     chmod -R 505 /home/lvl10/.config/scripts &&\
     chmod -R 505 /home/lvl10/help.txt &&\
     chmod -R 505 /home/lvl10/vanaram_ftp.txt &&\
-    service ssh start &&\
-    service vsftpd start &&\
     echo "alias start='python3 /home/lvl10/.config/scripts/task.py' " >> /home/lvl10/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl10/.config/scripts/assets/'" >> /home/lvl10/.bashrc &&\
     echo "alias help='clear && cat /home/lvl10/help.txt'" >> /home/lvl10/.bashrc &&\
@@ -382,7 +383,6 @@ RUN echo "root:sCn_v4zha" | chpasswd &&\
     #chmod  404 /usr/local/rocky/bun.md5 &&\
     chmod 707 -R /home/lvl11/dining_table &&\
     chmod 707 -R /home/lvl11/buns &&\
-    service ssh start &&\
     echo "alias start='python3 /home/lvl11/.config/scripts/task.py' " >> /home/lvl11/.bashrc &&\
     echo "export tries=4 && export ASSET_DIR='/home/lvl11/.config/scripts/assets/'" >> /home/lvl11/.bashrc &&\
     echo "alias help='clear && cat /home/lvl11/help.txt'" >> /home/lvl11/.bashrc &&\
@@ -394,7 +394,6 @@ RUN echo "root:sCn_v4zha" | chpasswd &&\
     chown lvl12 -R  /home/lvl12 &&\
     chmod -R 505 /home/lvl12/.config/scripts &&\
     chmod -R 505 /home/lvl12/help.txt &&\
-    service ssh start &&\
     echo "alias start='python3 /home/lvl12/.config/scripts/task.py' " >> /home/lvl12/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl12/.config/scripts/assets/'" >> /home/lvl12/.bashrc &&\
     echo "alias help='clear && cat /home/lvl12/help.txt'" >> /home/lvl12/.bashrc &&\
@@ -403,7 +402,6 @@ RUN echo "root:sCn_v4zha" | chpasswd &&\
     chmod -R 505 /home/lvl13/.config/scripts &&\
     chmod -R 505 /home/lvl13/help.txt &&\
     chmod -R 505 /home/lvl13/instruction.txt &&\
-    service ssh start &&\
     echo "alias start='python3 /home/lvl13/.config/scripts/task.py' " >> /home/lvl13/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl13/.config/scripts/assets/'" >> /home/lvl13/.bashrc &&\
     echo "alias help='clear && cat /home/lvl13/help.txt'" >> /home/lvl13/.bashrc &&\
@@ -412,7 +410,6 @@ RUN echo "root:sCn_v4zha" | chpasswd &&\
     chmod -R 505 /home/lvl14/.config/scripts &&\
     chmod -R 505 /home/lvl14/help.txt &&\
     chmod -R 505 /home/lvl14/instruction.txt &&\
-    service ssh start &&\
     echo "alias start='python3 /home/lvl14/.config/scripts/task.py' " >> /home/lvl14/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl14/.config/scripts/assets/'" >> /home/lvl14/.bashrc &&\
     echo "alias help='clear && cat /home/lvl14/help.txt'" >> /home/lvl14/.bashrc &&\
@@ -421,7 +418,6 @@ RUN echo "root:sCn_v4zha" | chpasswd &&\
     chmod -R 505 /home/lvl15/.config/scripts &&\
     chmod -R 505 /home/lvl15/help.txt &&\
     chmod -R 505 /home/lvl15/instruction.txt &&\
-    service ssh start &&\
     echo "alias start='python3 /home/lvl15/.config/scripts/task.py' " >> /home/lvl15/.bashrc &&\
     echo "export ASSET_DIR='/home/lvl15/.config/scripts/assets/'" >> /home/lvl15/.bashrc &&\
     echo "alias help='clear && cat /home/lvl15/help.txt'" >> /home/lvl15/.bashrc &&\
