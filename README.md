@@ -32,4 +32,4 @@ ssh lvl0@127.0.0.1 -p 2020
 ```
 
 ## Note
-- Basic obfuscation,securtity and file permission restriction is not implemented as it is intented to be beginner friendly and not competetive.
+- Basic obfuscation,security and file permission restriction is not implemented as it is intented to be beginner friendly and not competetive.
