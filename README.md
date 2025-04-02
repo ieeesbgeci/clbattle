@@ -3,6 +3,9 @@
 **CL Battle** is a series of basic linux command challenges.<br>
 Each level is cleared when password for the next level is found .
 <br><br>
+![img1](./assets/img1.png)
+![img2](./assets/img2.png)
+![img3](./assets/img3.png)
 
 ## Installation
 - clone the repo<br>
